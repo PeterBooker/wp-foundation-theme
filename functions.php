@@ -233,3 +233,17 @@ function foundation_logout_redirect( $logouturl, $redir ) {
 
 }
 add_filter( 'logout_url', 'foundation_logout_redirect', 10, 2 );
+
+/**
+ * Remove the default Admin Bar offset, custom CSS manually adds this.
+ */
+function foundation_default_admin_bar_fix() {
+
+    if( ! is_admin() && is_admin_bar_showing() ) {
+
+        remove_action( 'wp_head', '_admin_bar_bump_cb' );
+
+    }
+
+}
+add_action( 'wp_head', 'foundation_default_admin_bar_fix', 5 );
