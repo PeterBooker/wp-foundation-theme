@@ -106,11 +106,11 @@ function foundation_register_scripts() {
 
     wp_register_script( 'modernizr', FOUNDATION_URL . '/assets/js/src/modernizr.js', array(), FOUNDATION_VERSION, true );
 
-    wp_register_script( 'dignity-customizer', FOUNDATION_URL . '/assets/js/customizer.js', array( 'customize-preview' ), FOUNDATION_VERSION, true );
+    wp_register_script( 'foundation-customizer', FOUNDATION_URL . '/assets/js/src/customizer.js', array( 'customize-preview' ), FOUNDATION_VERSION, true );
 
-    wp_register_script( 'dignity-skip-link-focus-fix', FOUNDATION_URL . '/assets/js/skip-link-focus-fix.js', array(), FOUNDATION_VERSION, true );
+    wp_register_script( 'foundation-skip-link-focus-fix', FOUNDATION_URL . '/assets/js/src/skip-link-focus-fix.js', array(), FOUNDATION_VERSION, true );
 
-    wp_register_script( 'dignity-navigation', FOUNDATION_URL . '/assets/js/navigation.js', array(), FOUNDATION_VERSION, true );
+    wp_register_script( 'foundation-navigation', FOUNDATION_URL . '/assets/js/src/navigation.js', array(), FOUNDATION_VERSION, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'foundation_register_scripts' );
