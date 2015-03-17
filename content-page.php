@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 ?>
 
@@ -16,14 +16,14 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'dignity' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'foundation' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', 'dignity' ), '<span class="edit-link"><i class="fa fa-cog"></i>', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'foundation' ), '<span class="edit-link"><i class="fa fa-cog"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

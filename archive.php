@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 
 get_header(); ?>
@@ -24,46 +24,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'dignity' ), '<span>' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'foundation' ), '<span>' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'dignity' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'foundation' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'dignity' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'dignity' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'foundation' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'foundation' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'dignity' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'dignity' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'foundation' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'foundation' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'dignity' );
+							_e( 'Asides', 'foundation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'dignity' );
+							_e( 'Galleries', 'foundation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'dignity' );
+							_e( 'Images', 'foundation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'dignity' );
+							_e( 'Videos', 'foundation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'dignity' );
+							_e( 'Quotes', 'foundation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'dignity' );
+							_e( 'Links', 'foundation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'dignity' );
+							_e( 'Statuses', 'foundation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'dignity' );
+							_e( 'Audios', 'foundation' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'dignity' );
+							_e( 'Chats', 'foundation' );
 
 						else :
-							_e( 'Archives', 'dignity' );
+							_e( 'Archives', 'foundation' );
 
 						endif;
 					?>
@@ -90,7 +90,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php dignity_paging_nav(); ?>
+			<?php foundation_paging_nav(); ?>
 
 		<?php else : ?>
 

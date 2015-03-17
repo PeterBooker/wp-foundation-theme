@@ -1,6 +1,6 @@
 <?php
 /**
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 ?>
 
@@ -11,7 +11,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-			<?php dignity_posted_on(); ?>
+			<?php foundation_posted_on(); ?>
 		</div><!-- .entry-meta -->
 
 	</header><!-- .entry-header -->
@@ -44,7 +44,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'dignity' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'foundation' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -56,20 +56,20 @@
         <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
             <?php
             /* translators: used between list items, there is a space after the comma */
-            $categories_list = get_the_category_list( __( ', ', 'dignity' ) );
-            if ( $categories_list && dignity_categorized_blog() ) : ?>
+            $categories_list = get_the_category_list( __( ', ', 'foundation' ) );
+            if ( $categories_list && foundation_categorized_blog() ) : ?>
                 <span class="cat-links">
-                    <?php printf( __( '<i class="fa fa-folder-open"></i> %1$s', 'dignity' ), $categories_list ); ?>
+                    <?php printf( __( '<i class="fa fa-folder-open"></i> %1$s', 'foundation' ), $categories_list ); ?>
                 </span>
             <?php endif; // End if categories ?>
 
             <?php
             /* translators: used between list items, there is a space after the comma */
-            $tags_list = get_the_tag_list( '', __( ', ', 'dignity' ) );
+            $tags_list = get_the_tag_list( '', __( ', ', 'foundation' ) );
             if ( $tags_list ) : ?>
 
                 <span class="tags-links">
-                    <?php printf( __( '<i class="fa fa-tag"></i> %1$s', 'dignity' ), $tags_list ); ?>
+                    <?php printf( __( '<i class="fa fa-tag"></i> %1$s', 'foundation' ), $tags_list ); ?>
                 </span>
 
             <?php endif; // End if $tags_list ?>
@@ -77,10 +77,10 @@
         <?php endif; // End if 'post' == get_post_type() ?>
 
         <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-            <span class="comments-link"><i class="fa fa-comments"></i><?php comments_popup_link( __( 'Leave a Comment', 'dignity' ), __( '1 Comment', 'dignity' ), __( '% Comments', 'dignity' ) ); ?></span>
+            <span class="comments-link"><i class="fa fa-comments"></i><?php comments_popup_link( __( 'Leave a Comment', 'foundation' ), __( '1 Comment', 'foundation' ), __( '% Comments', 'foundation' ) ); ?></span>
         <?php endif; ?>
 
-        <?php edit_post_link( __( 'Edit', 'dignity' ), '<span class="edit-link"><i class="fa fa-cog"></i>', '</span>' ); ?>
+        <?php edit_post_link( __( 'Edit', 'foundation' ), '<span class="edit-link"><i class="fa fa-cog"></i>', '</span>' ); ?>
 
     </footer><!-- .entry-footer -->
 

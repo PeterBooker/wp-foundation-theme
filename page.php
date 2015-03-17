@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 
 get_header(); ?>

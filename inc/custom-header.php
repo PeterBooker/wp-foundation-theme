@@ -12,17 +12,17 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 
 /**
  * Setup the WordPress core custom header feature.
  *
- * @uses dignity_header_style()
- * @uses dignity_admin_header_style()
- * @uses dignity_admin_header_image()
+ * @uses foundation_header_style()
+ * @uses foundation_admin_header_style()
+ * @uses foundation_admin_header_image()
  */
-function dignity_custom_header_setup() {
+function foundation_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'dignity_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
@@ -40,9 +40,9 @@ if ( ! function_exists( 'dignity_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see dignity_custom_header_setup().
+ * @see foundation_custom_header_setup().
  */
-function dignity_header_style() {
+function foundation_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -75,15 +75,15 @@ function dignity_header_style() {
 	</style>
 	<?php
 }
-endif; // dignity_header_style
+endif; // foundation_header_style
 
 if ( ! function_exists( 'dignity_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see dignity_custom_header_setup().
+ * @see foundation_custom_header_setup().
  */
-function dignity_admin_header_style() {
+function foundation_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -103,15 +103,15 @@ function dignity_admin_header_style() {
 	</style>
 <?php
 }
-endif; // dignity_admin_header_style
+endif; // foundation_admin_header_style
 
 if ( ! function_exists( 'dignity_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see dignity_custom_header_setup().
+ * @see foundation_custom_header_setup().
  */
-function dignity_admin_header_image() {
+function foundation_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
@@ -123,4 +123,4 @@ function dignity_admin_header_image() {
 	</div>
 <?php
 }
-endif; // dignity_admin_header_image
+endif; // foundation_admin_header_image

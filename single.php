@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php dignity_post_nav(); ?>
+			<?php foundation_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

@@ -2,7 +2,7 @@
 /**
  * Custom Menu Walkers
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 
 class F5_TOP_BAR_WALKER extends Walker_Nav_Menu

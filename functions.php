@@ -1,8 +1,8 @@
 <?php
 /**
- * WP Dignity Theme functions and definitions
+ * WP Foundation Theme functions and definitions
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 
 define( 'DIGNITY_VERSION', '0.1.0' );
@@ -24,15 +24,15 @@ if ( ! function_exists( 'dignity_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function dignity_setup() {
+function foundation_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on WP dignity, use a find and replace
-	 * to change 'dignity' to the name of your theme in all the template files
+	 * to change 'foundation' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'dignity', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'foundation', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -74,7 +74,7 @@ function dignity_setup() {
 		//'default-image' => '',
 	//) ) );
 }
-endif; // dignity_setup
+endif; // foundation_setup
 add_action( 'after_setup_theme', 'dignity_setup' );
 
 /**
@@ -82,7 +82,7 @@ add_action( 'after_setup_theme', 'dignity_setup' );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function dignity_widgets_init() {
+function foundation_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => 'Sidebar',
@@ -110,7 +110,7 @@ add_action( 'widgets_init', 'dignity_widgets_init' );
 /**
  * Register scripts and styles.
  */
-function dignity_register_scripts() {
+function foundation_register_scripts() {
 
     wp_register_script( 'foundation', DIGNITY_URL . '/assets/js/foundation.min.js', array( 'jquery' ), DIGNITY_VERSION, true );
 
@@ -132,7 +132,7 @@ add_action( 'wp_enqueue_scripts', 'dignity_register_scripts' );
 /**
  * Enqueue scripts and styles.
  */
-function dignity_enqueue_scripts() {
+function foundation_enqueue_scripts() {
 
     if ( ! is_admin() ) {
 
@@ -204,7 +204,7 @@ require get_template_directory() . '/inc/asset-caching.php';
 /**
  * Initialize the Foundation script on every page.
  */
-function dignity_foundation_init() {
+function foundation_foundation_init() {
 
     ?>
     <script type="text/javascript">
@@ -246,7 +246,7 @@ add_action( 'wp_footer', 'dignity_foundation_init', 20 );
 /**
  * Customize the Login Page Styling
  */
-function dignity_login_css() {
+function foundation_login_css() {
 
     //wp_enqueue_style( 'dignity-login', get_template_directory_uri() . '/library/css/login.css', false );
 
@@ -256,7 +256,7 @@ function dignity_login_css() {
 /**
  * Customize the Login Page Link
  */
-function dignity_login_url() {
+function foundation_login_url() {
 
     return home_url();
 
@@ -266,7 +266,7 @@ add_filter( 'login_headerurl', 'dignity_login_url' );
 /**
  * Customize the Login Page Title
  */
-function dignity_login_title() {
+function foundation_login_title() {
 
     return get_option( 'blogname' );
 
@@ -276,7 +276,7 @@ add_filter( 'login_headertitle', 'dignity_login_title' );
 /**
  * Initialize the Wowhead Tooltips script on every page.
  */
-function dignity_wowhead_tooltips_init() {
+function foundation_wowhead_tooltips_init() {
 
     $color = 'false';
     $iconize = 'false';
@@ -293,7 +293,7 @@ add_action( 'wp_footer', 'dignity_wowhead_tooltips_init' );
 /*
  * Enable SMTP Email Support
  */
-function dignity_configure_smtp( PHPMailer $phpmailer ) {
+function foundation_configure_smtp( PHPMailer $phpmailer ) {
 
     $phpmailer->isSMTP(); //switch to smtp
     $phpmailer->Host = 'smtp.googlemail.com';
@@ -311,7 +311,7 @@ add_action( 'phpmailer_init', 'dignity_configure_smtp' );
 /**
  * Remove bbPress Stylesheets
  */
-function dignity_deregister_bbpress_styles() {
+function foundation_deregister_bbpress_styles() {
     wp_deregister_style( 'bbp-default' );
 }
 //add_action( 'wp_print_styles', 'dignity_deregister_bbpress_styles', 15 );
@@ -320,7 +320,7 @@ function dignity_deregister_bbpress_styles() {
 /**
  * Return Blank for Single Forum/Topic Data (numbers after sub forums).
  */
-function dignity_bbpress_return_blank() {
+function foundation_bbpress_return_blank() {
 
     return '';
 
@@ -332,7 +332,7 @@ add_filter( 'bbp_get_single_topic_description', 'dignity_bbpress_return_blank' )
  * Reomve the bbPress Topic and Reply Counts
  * and Make the bbPress Sub Form List Vertical
  */
-function dignity_bbpress_edit_sub_forums() {
+function foundation_bbpress_edit_sub_forums() {
 
     $args['separator'] = '<br>';
     $args['show_topic_count'] = false;
@@ -346,7 +346,7 @@ add_filter( 'bbp_before_list_forums_parse_args', 'dignity_bbpress_edit_sub_forum
 /**
  * Redirect Logouts to Home Page
  */
-function dignity_logout_redirect( $logouturl, $redir ) {
+function foundation_logout_redirect( $logouturl, $redir ) {
 
     $redir = get_bloginfo('url');
     return $logouturl . '&redirect_to=' . urlencode( $redir );

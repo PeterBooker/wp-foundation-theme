@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 
 get_header(); ?>
@@ -40,7 +40,7 @@ get_header(); ?>
 
 			</ul>
 
-			<?php dignity_paging_nav(); ?>
+			<?php foundation_paging_nav(); ?>
 
 		<?php else : ?>
 

@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -29,11 +29,9 @@
 
 <?php get_template_part( 'parts/googleanalytics' ); ?>
 
-<?php get_template_part( 'parts/offcanvas', 'top' ); ?>
-
 <div id="page" class="site">
 
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'dignity' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'foundation' ); ?></a>
 
     <div class="top-area sticky contain-to-grid">
 
@@ -48,8 +46,8 @@
             <div class="small-12 columns">
 
                 <div class="site-branding">
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Dignity Gaming" rel="home">Dignity Gaming<?php //bloginfo( 'name' ); ?></a></h1>
-                    <h2 class="site-description"><?php //bloginfo( 'description' ); ?></h2>
+                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Dignity Gaming" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                 </div>
 
             </div>

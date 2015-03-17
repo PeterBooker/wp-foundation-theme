@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package WP Dignity Theme
+ * @package WP Foundation Theme
  */
 
 /**
@@ -13,7 +13,7 @@
  * @param array $args Configuration arguments.
  * @return array
  */
-function dignity_page_menu_args( $args ) {
+function foundation_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
@@ -25,7 +25,7 @@ add_filter( 'wp_page_menu_args', 'dignity_page_menu_args' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function dignity_body_classes( $classes ) {
+function foundation_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -42,7 +42,7 @@ add_filter( 'body_class', 'dignity_body_classes' );
  * @param string $sep Optional separator.
  * @return string The filtered title.
  */
-function dignity_wp_title( $title, $sep ) {
+function foundation_wp_title( $title, $sep ) {
 	if ( is_feed() ) {
 		return $title;
 	}
@@ -60,7 +60,7 @@ function dignity_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'dignity' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'foundation' ), max( $paged, $page ) );
 	}
 
 	return $title;
@@ -79,7 +79,7 @@ add_filter( 'wp_title', 'dignity_wp_title', 10, 2 );
  * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
-function dignity_setup_author() {
+function foundation_setup_author() {
 	global $wp_query;
 
 	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
