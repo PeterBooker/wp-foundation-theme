@@ -19,7 +19,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2">
+			<ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-1">
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
