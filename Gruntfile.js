@@ -8,13 +8,15 @@ module.exports = function(grunt) {
                 stripBanners: true,
                 banner: '/*! <%= pkg.title %> - v<%= pkg.version %>\n' +
                 ' * <%= pkg.homepage %>\n' +
-                ' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
-                ' * Licensed GPLv2+' +
+                ' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' +
+                ' * Licensed GPLv2+\n' +
                 ' */\n'
             },
             scripts: {
                 src: [
-                    'assets/js/src/scripts.js'
+                    'assets/js/custom.js',
+                    'assets/js/src/foundation.min.js',
+                    'assets/js/src/modernizr.js'
                 ],
                 dest: 'assets/js/scripts.js'
             }
@@ -27,8 +29,8 @@ module.exports = function(grunt) {
                 options: {
                     banner: '/*! <%= pkg.title %> - v<%= pkg.version %>\n' +
                     ' * <%= pkg.homepage %>\n' +
-                    ' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
-                    ' * Licensed GPLv2+' +
+                    ' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' +
+                    ' * Licensed GPLv2+\n' +
                     ' */\n',
                     mangle: {
                         except: ['jQuery']
@@ -78,10 +80,9 @@ module.exports = function(grunt) {
             },
             scripts: {
                 files: [
-                    'assets/js/src/**/*.js',
-                    'inc/modules/**/assets/js/src/**/*.js'
+                    'assets/js/**/*.js'
                 ],
-                tasks: ['jshint', 'concat', 'uglify'],
+                tasks: ['concat', 'uglify'],
                 options: {
                     debounceDelay: 500
                 }
@@ -98,6 +99,7 @@ module.exports = function(grunt) {
 
     // Default task.
     grunt.registerTask( 'default', ['watch', 'concat', 'uglify', 'sass', 'cssmin'] );
+    grunt.registerTask( 'update', ['concat'] );
 
     grunt.util.linefeed = '\n';
 };
