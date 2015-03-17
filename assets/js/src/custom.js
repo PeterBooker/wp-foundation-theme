@@ -1,0 +1,4 @@
+/**
+ * Custom Javascript
+ */
+$(document).foundation();
