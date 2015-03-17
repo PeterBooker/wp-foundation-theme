@@ -1,4 +1,3 @@
 /**
  * Custom Javascript
  */
-$(document).foundation();
