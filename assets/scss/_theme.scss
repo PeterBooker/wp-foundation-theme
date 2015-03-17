@@ -43,7 +43,7 @@ body {
 --------------------------------------------------------------*/
 
 .header-area {
-    background: #333;
+    background: #666;
 }
 
 .site-header {
@@ -51,10 +51,16 @@ body {
     .site-title {
         margin: em-calc( 40 ) 0;
         text-align: center;
+
+        a {
+            color: #fff;
+        }
     }
 
-    .site-title a {
-        color: #fff;
+    .site-description {
+        margin: 0 0 em-calc( 40 );
+        text-align: center;
+        color: #ccc;
     }
 
 }
@@ -284,6 +290,7 @@ article.page {
 
         p {
             margin: em-calc( 20 ) 0;
+            color: #fff;
         }
 
     }
