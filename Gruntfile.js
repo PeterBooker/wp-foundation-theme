@@ -3,6 +3,14 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        jshint: {
+            files: ['Gruntfile.js', 'assets/js/**/*.js'],
+            options: {
+                globals: {
+                    jQuery: true
+                }
+            }
+        },
         concat: {
             options: {
                 stripBanners: true,
@@ -82,7 +90,7 @@ module.exports = function(grunt) {
                 files: [
                     'assets/js/**/*.js'
                 ],
-                tasks: ['concat', 'uglify'],
+                tasks: ['concat', 'uglify', 'jshint'],
                 options: {
                     debounceDelay: 500
                 }
@@ -98,7 +106,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task.
-    grunt.registerTask( 'default', ['watch', 'concat', 'uglify', 'sass', 'cssmin'] );
+    grunt.registerTask( 'default', ['watch', 'concat', 'jshint', 'uglify', 'sass', 'cssmin'] );
     grunt.registerTask( 'update', ['concat'] );
 
     grunt.util.linefeed = '\n';
