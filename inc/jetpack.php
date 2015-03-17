@@ -16,4 +16,4 @@ function foundation_jetpack_setup() {
 		'footer'    => 'page',
 	) );
 }
-add_action( 'after_setup_theme', 'dignity_jetpack_setup' );
+add_action( 'after_setup_theme', 'foundation_jetpack_setup' );

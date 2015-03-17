@@ -35,7 +35,7 @@ function foundation_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'dignity_post_nav' ) ) :
+if ( ! function_exists( 'foundation_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  */
@@ -61,7 +61,7 @@ function foundation_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'dignity_posted_on' ) ) :
+if ( ! function_exists( 'foundation_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
@@ -97,7 +97,9 @@ endif;
  * @return bool
  */
 function foundation_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'dignity_categories' ) ) ) {
+
+	if ( false === ( $all_the_cool_cats = get_transient( 'foundation_categories' ) ) ) {
+
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -110,7 +112,8 @@ function foundation_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'dignity_categories', $all_the_cool_cats );
+		set_transient( 'foundation_categories', $all_the_cool_cats );
+
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
@@ -127,7 +130,7 @@ function foundation_categorized_blog() {
  */
 function foundation_category_transient_flusher() {
 	// Like, beat it. Dig?
-	delete_transient( 'dignity_categories' );
+	delete_transient( 'foundation_categories' );
 }
-add_action( 'edit_category', 'dignity_category_transient_flusher' );
-add_action( 'save_post',     'dignity_category_transient_flusher' );
+add_action( 'edit_category', 'foundation_category_transient_flusher' );
+add_action( 'save_post',     'foundation_category_transient_flusher' );

@@ -23,18 +23,18 @@
  * @uses foundation_admin_header_image()
  */
 function foundation_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'dignity_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'foundation_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'dignity_header_style',
-		'admin-head-callback'    => 'dignity_admin_header_style',
-		'admin-preview-callback' => 'dignity_admin_header_image',
+		'wp-head-callback'       => 'foundation_header_style',
+		'admin-head-callback'    => 'foundation_admin_header_style',
+		'admin-preview-callback' => 'foundation_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'dignity_custom_header_setup' );
+add_action( 'after_setup_theme', 'foundation_custom_header_setup' );
 
 if ( ! function_exists( 'dignity_header_style' ) ) :
 /**
@@ -77,7 +77,7 @@ function foundation_header_style() {
 }
 endif; // foundation_header_style
 
-if ( ! function_exists( 'dignity_admin_header_style' ) ) :
+if ( ! function_exists( 'foundation_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
@@ -105,7 +105,7 @@ function foundation_admin_header_style() {
 }
 endif; // foundation_admin_header_style
 
-if ( ! function_exists( 'dignity_admin_header_image' ) ) :
+if ( ! function_exists( 'foundation_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *

@@ -17,7 +17,7 @@ function foundation_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'dignity_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'foundation_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -33,7 +33,7 @@ function foundation_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'dignity_body_classes' );
+add_filter( 'body_class', 'foundation_body_classes' );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -65,7 +65,7 @@ function foundation_wp_title( $title, $sep ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'dignity_wp_title', 10, 2 );
+add_filter( 'wp_title', 'foundation_wp_title', 10, 2 );
 
 /**
  * Sets the authordata global when viewing an author archive.
@@ -86,4 +86,4 @@ function foundation_setup_author() {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
-add_action( 'wp', 'dignity_setup_author' );
+add_action( 'wp', 'foundation_setup_author' );
