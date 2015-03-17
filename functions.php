@@ -102,13 +102,9 @@ add_action( 'widgets_init', 'foundation_widgets_init' );
  */
 function foundation_register_scripts() {
 
-    wp_register_script( 'foundation', FOUNDATION_URL . '/assets/js/foundation.min.js', array( 'jquery' ), FOUNDATION_VERSION, true );
+    wp_register_script( 'foundation', FOUNDATION_URL . '/assets/js/src/foundation.min.js', array( 'jquery' ), FOUNDATION_VERSION, true );
 
-    wp_register_script( 'modernizr', FOUNDATION_URL . '/assets/js/modernizr.js', array(), FOUNDATION_VERSION, true );
-
-    wp_register_script( 'datatables', FOUNDATION_URL . '/assets/js/jquery.dataTables.min.js', array(), '1.10.2', true );
-
-    wp_register_script( 'jquery-timeago', FOUNDATION_URL . '/assets/js/jquery.timeago.js', array( 'jquery' ), FOUNDATION_VERSION, true );
+    wp_register_script( 'modernizr', FOUNDATION_URL . '/assets/js/src/modernizr.js', array(), FOUNDATION_VERSION, true );
 
     wp_register_script( 'dignity-customizer', FOUNDATION_URL . '/assets/js/customizer.js', array( 'customize-preview' ), FOUNDATION_VERSION, true );
 
