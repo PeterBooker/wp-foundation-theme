@@ -1192,7 +1192,7 @@ $table-row-font-color: #efefef;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: #333;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1254,8 +1254,8 @@ $table-row-font-color: #efefef;
 // $topbar-media-query: $medium-up;
 
 // Divider Styles
-// $topbar-divider-border-bottom: solid 1px scale-color($topbar-bg-color, $lightness: 13%);
-// $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+$topbar-divider-border-bottom: none; // solid 1px  scale-color($topbar-bg-color, $lightness: 13%)
+$topbar-divider-border-top: solid 1px scale-color( $topbar-bg-color, $lightness: -40% ); // solid 1px scale-color($topbar-bg-color, $lightness: -50%)
 
 // Sticky Class
 // $topbar-sticky-class: ".sticky";
