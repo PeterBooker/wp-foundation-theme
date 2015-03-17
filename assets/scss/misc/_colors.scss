@@ -1,0 +1,155 @@
+/*
+ * WP Dignity Theme Color Variables
+ */
+
+/*--------------------------------------------------------------
+1.0 Main Website Colors
+--------------------------------------------------------------*/
+$dignity-background: #181818;
+$dignity-foreground: #222;
+
+$blue: #343740;
+$dark-blue: darken( $blue, 4% );
+$light-blue: lighten( $blue, 10% );
+
+/*--------------------------------------------------------------
+4.0 World of Warcraft Colors
+--------------------------------------------------------------*/
+
+$quality-poor: #fff;
+$quality-common: #fff;
+$quality-uncommon: #1EFF00;
+$quality-rare: #0081FF;
+$quality-epic: #C600FF;
+$quality-legendary: #FF8000;
+$quality-heirloom: #E5CC80;
+
+body {
+
+  .color-item-class-0 {
+    color: $quality-poor;
+    &:hover {
+      color: darken( $quality-poor, 10% );
+    }
+  }
+  .color-item-class-1 {
+    color: $quality-common;
+    &:hover {
+      color: darken( $quality-common, 10% );
+    }
+  }
+  .color-item-class-2 {
+    color: $quality-uncommon;
+    &:hover {
+      color: darken( $quality-uncommon, 10% );
+    }
+  }
+  .color-item-class-3 {
+    color: $quality-rare;
+    &:hover {
+      color: darken( $quality-rare, 10% );
+    }
+  }
+  .color-item-class-4 {
+    color: $quality-epic;
+    &:hover {
+      color: darken( $quality-epic, 10% );
+    }
+  }
+  .color-item-class-5 {
+    color: $quality-legendary;
+    &:hover {
+      color: darken( $quality-legendary, 10% );
+    }
+  }
+  .color-item-class-6 {
+    color: $quality-heirloom;
+    &:hover {
+      color: darken( $quality-heirloom, 10% );
+    }
+  }
+
+}
+
+$class-warrior: #C69B6D;
+$class-paladin: #F48CBA;
+$class-hunter: #AAD372;
+$class-rogue: #FFF468;
+$class-priest: #F0EBE0;
+$class-deathknight: #C41E3B;
+$class-shaman: #2359FF;
+$class-mage: #68CCEF;
+$class-warlock: #9382C9;
+$class-monk: #00FFBA;
+$class-druid: #FF7C0A;
+
+body {
+
+  .color-class-1 {
+    color: $class-warrior;
+    &:hover {
+      color: darken( $class-warrior, 20% );
+    }
+  }
+  .color-class-2 {
+    color: $class-paladin;
+    &:hover {
+      color: darken( $class-paladin, 5% );
+    }
+  }
+  .color-class-3 {
+    color: $class-hunter;
+    &:hover {
+      color: darken( $class-hunter, 20% );
+    }
+  }
+  .color-class-4 {
+    color: $class-rogue;
+    &:hover {
+      color: darken( $class-rogue, 30% );
+    }
+  }
+  .color-class-5 {
+    color: $class-priest;
+    &:hover {
+      color: darken( $class-priest, 20% );
+    }
+  }
+  .color-class-6 {
+    color: $class-deathknight;
+    &:hover {
+      color: darken( $class-deathknight, 10% );
+    }
+  }
+  .color-class-7 {
+    color: $class-shaman;
+    &:hover {
+      color: darken( $class-shaman, 5% );
+    }
+  }
+  .color-class-8 {
+    color: $class-mage;
+    &:hover {
+      color: darken( $class-mage, 20% );
+    }
+  }
+  .color-class-9 {
+    color: $class-warlock;
+    &:hover {
+      color: darken( $class-warlock, 10% );
+    }
+  }
+  .color-class-10 {
+    color: $class-monk;
+    &:hover {
+      color: darken( $class-monk, 20% );
+    }
+  }
+  .color-class-11 {
+    color: $class-druid;
+    &:hover {
+      color: darken( $class-druid, 10% );
+    }
+  }
+
+}

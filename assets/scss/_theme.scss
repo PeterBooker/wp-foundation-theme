@@ -1,0 +1,957 @@
+/*
+ * WP Dignity Theme Styles
+ */
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+0.0 Color Values
+--------------------------------------------------------------*/
+
+$dark-grey: #191919;
+$grey: #272727;
+$light-grey: #737373;
+
+/*--------------------------------------------------------------
+1.0 Main Layout
+--------------------------------------------------------------*/
+body {
+    //background: $dark-grey url('assets/imgs/dg-background-wow.jpg') top center no-repeat;
+    //background: #000 url('assets/imgs/bg-wod-edited.jpg') center 45px no-repeat;
+}
+.menu-area {
+    //background: #333;
+}
+.site-main {
+    //padding: 0;
+    //padding-top: em-calc( 20 );
+}
+.site-content {
+    //background: $grey;
+    padding: em-calc( 40 ) 0;
+}
+.site-footer {
+    //background: lighten( $grey, 10% );
+}
+.widget-area {
+
+}
+
+/*--------------------------------------------------------------
+3.0 Header
+--------------------------------------------------------------*/
+.header-area {
+    background: $blue;
+}
+
+.site-header {
+
+    .site-title {
+        margin: em-calc( 40 ) 0;
+        text-align: center;
+    }
+
+    .site-title a {
+        color: #fff;
+    }
+
+}
+
+/*--------------------------------------------------------------
+4.0 Posts
+--------------------------------------------------------------*/
+
+article.post,
+article.page {
+    position: relative;
+    padding: em-calc( 20 ) em-calc( 10 );
+}
+
+article.page {
+    padding-top: 0;
+}
+
+body.home article.post {
+
+    .entry-image {
+        max-width: 200px;
+        margin: 0 em-calc( 16 ) em-calc( 8 ) 0;
+    }
+
+    &:first-of-type {
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    &:last-of-type {
+        border-bottom: 0;
+    }
+
+}
+
+article.post {
+
+    .entry-image {
+        margin-top: em-calc( 10 );
+        margin-bottom: em-calc( 20 );
+    }
+
+    .entry-inner {
+        border: 1px solid #D9D9D9;
+        padding: em-calc( 18 );
+    }
+
+    .entry-header {
+
+        margin-bottom: em-calc( 20 );
+
+        .entry-title {
+            margin: 0;
+        }
+
+        .entry-meta {
+            font-size: rem-calc( 14 );
+        }
+
+    }
+
+    .entry-footer {
+
+        font-size: rem-calc( 14 );
+        margin-bottom: em-calc( 8 );
+
+        span {
+
+            margin-right: em-calc( 8 );
+
+            i.fa {
+              margin-right: em-calc( 2 );
+            }
+
+            i.fa-comments,
+            i.fa-cog {
+              margin-right: em-calc( 6 );
+            }
+
+            i {
+                color: #888;
+            }
+
+        }
+
+    }
+
+    &:first-of-type {
+        padding-top: 0;
+        border-top: 0;
+    }
+
+}
+
+.edit-link i {
+    margin-right: em-calc( 6 );
+}
+
+.navigation.post-navigation,
+.navigation.paging-navigation {
+
+    padding: 0 em-calc( 25 );
+    margin-bottom: em-calc( 20 );
+    margin-left: -15px;
+    margin-right: -15px;
+    overflow: hidden;
+
+    .nav-previous,
+    .nav-next {
+        width: 50%;
+    }
+
+    .nav-previous {
+        float: left;
+        text-align: left;
+    }
+
+    .nav-next {
+        float: right;
+        text-align: right;
+    }
+
+}
+
+.navigation.paging-navigation {
+    padding-top: em-calc( 20 );
+}
+
+/*--------------------------------------------------------------
+5.0 Comments
+--------------------------------------------------------------*/
+.comments-area {
+
+    padding: 0 em-calc( 10 );
+
+    .comments-title {
+        margin-bottom: em-calc( 20 );
+    }
+
+    code {
+        background: darken( #fff, 90% );
+        color: darken( #fff, 40% );
+        border: 1px solid darken( #fff, 80% );
+    }
+
+    .form-allowed-tags {
+        font-size: rem-calc( 14 );
+    }
+
+    .form-submit #submit {
+        @include button( rem-calc(12) );
+    }
+
+    .comment-list {
+
+        list-style: none;
+        margin-left: 0;
+
+        .children {
+
+            list-style: none;
+            margin-left: em-calc( 20 );
+
+            .comment-body {
+                //background: darken( #fff, 87% );
+                //border: 1px solid darken( #fff, 77% );
+            }
+
+        }
+
+        .comment-body {
+
+            background: darken( $grey, 2% );
+            color: darken( #fff, 40% );
+            border: 1px solid lighten( $grey, 3% );
+            margin-bottom: em-calc( 20 );
+            padding: em-calc( 20 );
+            position: relative;
+
+            .comment-content {
+                color: lighten( $grey, 60% );
+            }
+
+            .comment-meta {
+
+               overflow: hidden;
+
+                .comment-author {
+
+                    border: none;
+                    padding: 0 0 0 em-calc( 74 );
+                    margin-bottom: em-calc( 0 );
+                    display: block;
+                    min-height: 25px;
+                    line-height: 1.1em;
+
+                    .fn {
+                        font-weight: bold;
+                        color: $primary-color;
+                    }
+
+                    .says {
+                        display: none;
+                    }
+
+                    img {
+                        position: absolute;
+                        top: em-calc( 18 );
+                        left: em-calc( 18 );
+                        max-width: 50px;
+                    }
+
+                }
+
+                .comment-metadata {
+
+                    display: block;
+                    padding-left: em-calc( 74 );
+                    min-height: 25px;
+                    margin-bottom: em-calc( 20 );
+
+                    font-size: rem-calc( 12 );
+
+                    a {
+                        color: #777;
+                    }
+
+                    a:hover,
+                    a:focus,
+                    a:active {
+                        color: #555;
+                    }
+
+                    .edit-link {
+
+                        position: absolute;
+                        bottom: em-calc( 18 );
+                        right: em-calc( 18 );
+                        font-size: rem-calc( 14 );
+
+                        a:before {
+                            font-family: FontAwesome;
+                            content: "\f013"; // Font-Awesome .fa-reply Icon
+                            margin-right: em-calc( 8 );
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .reply {
+
+            font-size: rem-calc( 14 );
+
+            a:before {
+                font-family: FontAwesome;
+                content: "\f112"; // Font-Awesome .fa-reply Icon
+                margin-right: em-calc( 8 );
+            }
+
+            a {
+                color: #777;
+            }
+
+            a:hover,
+            a:focus,
+            a:active {
+                color: #555;
+            }
+
+        }
+
+    }
+
+}
+
+/*--------------------------------------------------------------
+5.0 bbPress
+--------------------------------------------------------------*/
+body.bbpress #bbpress-forums {
+
+    .bbp-search-form {
+
+        input.button {
+            @include button( rem-calc( 10 ) );
+            padding-top: 13px;
+            padding-bottom: 13px;
+        }
+
+    }
+
+    .bbp-author-avatar {
+
+        .avatar {
+            margin-bottom: 0;
+            border: none;
+            display: none;
+        }
+
+    }
+
+    ul.bbp-forums,
+    ul.bbp-topics,
+    ul.bbp-replies,
+    ul.forums {
+
+        background: darken( #272727, 1% );
+        border: 1px solid #222;
+
+        li.bbp-header {
+            background: darken( #272727, 2% );
+            border-top: none;
+        }
+
+        li.bbp-body {
+
+            .bbp-reply-header {
+                background: darken( #272727, 2% );
+                border-top: none;
+            }
+
+            .odd,
+            .even {
+                border: none;
+            }
+
+            .odd {
+                background: lighten( #272727, 3% );
+            }
+
+            .even {
+                background: lighten( #272727, 1% );
+            }
+
+            .bbp-forum-topic-count,
+            .bbp-forum-reply-count {
+                font-size: rem-calc( 14 );
+            }
+
+            .super-sticky,
+            .sticky {
+                background: lighten( #272727, 5% ) !important;
+            }
+
+            .bbp-forum-content {
+                color: lighten( #272727, 40% );
+            }
+
+            .bbp-forum-freshness,
+            .bbp-forum-freshness > a {
+                font-size: rem-calc( 14 );
+            }
+
+            .bbp-forums-list {
+                border-left: 1px solid lighten( #272727, 20% );
+            }
+
+            .bbp-topic-revision-log {
+
+                border-top: 1px dotted lighten( #272727, 20% );
+
+                .avatar {
+                    display: none;
+                }
+
+            }
+
+        }
+
+        li.bbp-footer {
+            background: darken( #272727, 2% );
+            border-top: none;
+        }
+
+    }
+
+    .bbp-topic-form,
+    .bbp-reply-form {
+
+        fieldset.bbp-form {
+
+            border: 1px solid lighten( #272727, 4% );
+
+            legend {
+                background: none;
+                font-weight: normal;
+            }
+
+        }
+
+        .bbp-submit-wrapper {
+
+            .submit {
+
+                @include button( rem-calc( 12 ) );
+                margin-bottom: 0;
+
+            }
+
+        }
+
+    }
+
+    .bbp-template-notice {
+        border-radius: 0;
+        @include alert( $bg: #F08A24, $radius: false );
+        padding: em-calc( 4 ) em-calc( 6 );
+    }
+
+    .bbp-template-notice.info {
+        @include alert( $bg: #A0D3E8, $radius: false );
+        padding: em-calc( 4 ) em-calc( 6 );
+    }
+
+}
+
+/*--------------------------------------------------------------
+5.0 Pages
+--------------------------------------------------------------*/
+#content .mu_register {
+    padding: em-calc( 20 ) 0;
+}
+
+/*--------------------------------------------------------------
+5.0 Sidebar
+--------------------------------------------------------------*/
+.widget-area {
+    //background: url( 'assets/imgs/emblems/bg-alliance.png' ) right -80px top -42px no-repeat;
+}
+
+aside.widget {
+    padding-bottom: em-calc( 20 );
+}
+
+.widget-area {
+
+    .bbp-author-avatar {
+        display: none;
+    }
+
+    .widget {
+
+        ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .realm-status {
+
+            .title {
+
+                font-weight: normal;
+                font-size: rem-calc( 18 );
+                color: #fff;
+
+            }
+
+            .status {
+
+                font-weight: normal;
+                font-size: rem-calc( 16 );
+                color: #fff;
+
+                i {
+                    font-size: rem-calc( 20 );
+                }
+
+                i.online {
+                    color: #228b22;
+                }
+
+                i.offline {
+                    color: #de2b0f;
+                }
+
+            }
+
+        }
+
+        .guild-news {
+
+
+
+        }
+
+        &.widget.widget_display_stats {
+
+            dl {
+
+                margin: 0;
+
+                dt {
+                    font-weight: normal;
+                    color: #fff;
+                }
+
+                dd {
+                    font-weight: normal;
+                    color: lighten( $grey, 30% );
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/*--------------------------------------------------------------
+5.0 Footer
+--------------------------------------------------------------*/
+
+.footer-area {
+
+    background: $dark-blue;
+    padding: em-calc( 30 ) 0;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+}
+.info-area {
+
+    background: #222;
+
+    .site-info {
+
+        p {
+            margin: em-calc( 20 ) 0;
+        }
+
+    }
+
+}
+
+/*--------------------------------------------------------------
+6.0 Headings
+--------------------------------------------------------------*/
+
+.content-area {
+
+  h1, h2, h3, h4, h5, h6 {
+    //color: #fff;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: rem-calc(24);
+  }
+  h2 {
+    font-size: rem-calc(22);
+  }
+  h3 {
+    font-size: rem-calc(20);
+  }
+  h4 {
+    font-size: rem-calc(18);
+  }
+  h5 {
+    font-size: rem-calc(16);
+  }
+  h6 {
+    font-size: 1rem;
+  }
+
+}
+
+.widget-area {
+
+  h1, h2, h3, h4, h5, h6 {
+    //color: #777;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: rem-calc(24);
+  }
+  h2 {
+    font-size: rem-calc(22);
+  }
+  h3 {
+    font-size: rem-calc(20);
+  }
+  h4 {
+    font-size: rem-calc(18);
+  }
+  h5 {
+    font-size: rem-calc(16);
+  }
+  h6 {
+    font-size: 1rem;
+  }
+
+}
+
+.footer-area {
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: rem-calc(22);
+  }
+  h2 {
+    font-size: rem-calc(21);
+  }
+  h3 {
+    font-size: rem-calc(20);
+  }
+  h4 {
+    font-size: rem-calc(19);
+  }
+  h5 {
+    font-size: rem-calc(17);
+  }
+  h6 {
+    font-size: 1rem;
+  }
+
+}
+
+/*--------------------------------------------------------------
+7.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+8.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+9.0 Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+    content: "";
+    display: table;
+}
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+    clear: both;
+}
+
+/*--------------------------------------------------------------
+10.0 Admin Bar Off Canvas Menu Compatibility
+--------------------------------------------------------------*/
+@media #{$small-only} {
+
+    #wpadminbar {
+        position: fixed;
+    }
+
+}
+
+/*--------------------------------------------------------------
+11.0 Wowhead Compatibility
+--------------------------------------------------------------*/
+.wowhead-tooltip table {
+
+    background: none;
+
+    tbody tr {
+        background: none;
+    }
+
+}
+
+.achi-link {
+    //color: #FFB100;
+    &:hover {
+        //color: #fff;
+    }
+}
+
+/*--------------------------------------------------------------
+12.0 Commom Elements
+--------------------------------------------------------------*/
+
+.icon-frame,
+.icon-new {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0px;
+    background-color: #000;
+    border-radius: 0px;
+    border: 1px solid #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 2px 3px rgba(0, 0, 0, .4);
+
+    img {
+
+    }
+
+}
+
+/*--------------------------------------------------------------
+13.0 Guild News
+--------------------------------------------------------------*/
+
+ul.guild-news {
+
+    //color: #fff;
+    list-style: none;
+    margin: 0;
+
+    li.news-item {
+        font-size: 14px;
+        margin-bottom: 0.6em;
+    }
+
+    .timeago {
+        //color: #777;
+    }
+
+}
+
+/*--------------------------------------------------------------
+14.0 Guild Roster
+--------------------------------------------------------------*/
+
+#roster_wrapper {
+
+    margin-top: -30px;
+
+}
+
+table {
+
+  thead {
+
+      tr {
+
+          th {
+
+              position: relative;
+              padding-left: em-calc( 22 );
+
+              &:before,
+              &:after {
+                  content: '';
+                  position: absolute;
+                  width: 0;
+                  height: 0;
+                  border: 5px solid transparent;
+                  vertical-align: middle;
+                  float: left;
+                  opacity: 0.2;
+              }
+              &:before {
+                  top: 20%;
+                  left: 5px;
+                  border-bottom-color: darken( #4D1A08, 25% );
+              }
+              &:after {
+                  bottom: 20%;
+                  left: 5px;
+                  border-top-color: darken( #4D1A08, 25% );
+              }
+
+              &.sorting_asc:before {
+                  border-bottom-color: lighten( #4D1A08, 45% );
+              }
+
+              &.sorting_desc:after {
+                  border-top-color: lighten( #4D1A08, 45% );
+              }
+
+          }
+
+      }
+
+  }
+
+  .icon-frame {
+      vertical-align: middle;
+  }
+
+}
+
+.dataTables_info {
+    color: #777777;
+}
+
+/*--------------------------------------------------------------
+15.0 Recruitment Widget
+--------------------------------------------------------------*/
+
+.wow-recruitment-widget {
+
+    font-size: rem-calc( 14 );
+    color: #aaa;
+
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+
+    li {
+        font-size: rem-calc( 14 );
+        padding: em-calc( 4 ) 0;
+        clear: both;
+        display: visible;
+
+      .spec-icons {
+          .spec-icon {
+            margin-top: em-calc( 0 );
+            margin-left: em-calc( 4 );
+          }
+      }
+      .class-name {
+          margin-top: em-calc( 5 );
+          padding-left: em-calc( 0 );
+          float: left;
+      }
+      .spec-name {
+          padding-left: em-calc( 8 );
+      }
+
+    }
+
+    p {
+        font-size: rem-calc( 14 );
+    }
+
+    .spec-icon.spec-closed {
+
+        img {
+            opacity: 0.25;
+        }
+
+    }
+
+}
