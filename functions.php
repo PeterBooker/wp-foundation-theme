@@ -100,9 +100,9 @@ add_action( 'widgets_init', 'foundation_widgets_init' );
 /**
  * Register scripts and styles.
  */
-function foundation_register_scripts() {
+function foundation_register_files() {
 
-    wp_register_script( 'foundation', FOUNDATION_URL . '/assets/js/src/foundation.min.js', array( 'jquery' ), FOUNDATION_VERSION, true );
+    wp_register_script( 'zurb-foundation', FOUNDATION_URL . '/assets/js/src/foundation.min.js', array( 'jquery' ), FOUNDATION_VERSION, true );
 
     wp_register_script( 'modernizr', FOUNDATION_URL . '/assets/js/src/modernizr.js', array(), FOUNDATION_VERSION, true );
 
@@ -112,13 +112,15 @@ function foundation_register_scripts() {
 
     wp_register_script( 'foundation-navigation', FOUNDATION_URL . '/assets/js/src/navigation.js', array(), FOUNDATION_VERSION, true );
 
+    wp_register_script( 'foundation-combined', FOUNDATION_URL . '/assets/js/scripts.min.js', array(), FOUNDATION_VERSION, true );
+
 }
-add_action( 'wp_enqueue_scripts', 'foundation_register_scripts' );
+add_action( 'wp_enqueue_scripts', 'foundation_register_files' );
 
 /**
  * Enqueue scripts and styles.
  */
-function foundation_enqueue_scripts() {
+function foundation_enqueue_files() {
 
     if ( ! is_admin() ) {
 
@@ -126,11 +128,7 @@ function foundation_enqueue_scripts() {
 
         wp_enqueue_script( 'modernizr' );
 
-        wp_enqueue_script( 'foundation' );
-
-        wp_enqueue_script( 'datatables' );
-
-        wp_enqueue_script( 'jquery-timeago' );
+        wp_enqueue_script( 'zurb-foundation' );
 
         //wp_enqueue_script( 'foundation-navigation' );
 
@@ -149,8 +147,8 @@ function foundation_enqueue_scripts() {
     }
 
 }
-add_action( 'wp_enqueue_scripts', 'foundation_enqueue_scripts' );
-add_action( 'admin_enqueue_scripts', 'foundation_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'foundation_enqueue_files' );
+add_action( 'admin_enqueue_scripts', 'foundation_enqueue_files' );
 
 /**
  * Implement the Custom Header feature.
@@ -170,7 +168,7 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
