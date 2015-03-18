@@ -19,7 +19,7 @@ git clone https://github.com/PeterBooker/wp-foundation-theme.git custom-folder-n
 
 ```
 
-* Next we will perform several Find & Replace actions to customise the Theme (ignore double quotes in my examples, use case sensitivity)
+* Next we will perform several find & replace actions to customise the Theme (ignore double quotes in my examples, use case sensitivity)
 
  * ```Find "WP Foundation Theme" replace with "CustomName"``` (replaces package name)
 
@@ -29,5 +29,5 @@ git clone https://github.com/PeterBooker/wp-foundation-theme.git custom-folder-n
 
  * ```Find "FOUNDATION_" replace with "CUSTOMNAME_"``` (replaces constants)
 
-* Then you need to customise the values inside of the package.json file (you can leave the bottom half under 'devDependencies'. These values are used to build the comments at the top of the style.css file (among other things), which tells WordPress about your theme.
+* Then you need to customise the values inside of the ```package.json``` file (you can leave the bottom half under 'devDependencies'. These values are used to build the comments at the top of the ```style.css``` file (among other things), which tells WordPress about your theme.
 
