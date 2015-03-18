@@ -39,13 +39,9 @@ git clone https://github.com/PeterBooker/wp-foundation-theme.git custom-folder-n
 
 * Now we need to make sure the relevant dependencies are installed. Navigate to the theme folder in the command line and run:
 
-```npm install -g bower grunt-cli```
+ ```npm install -g bower grunt-cli``` and then: ```npm install```
 
-Followed by:
-
-```npm install```
-
-This will install all the grunt dependencies required by the Theme.
+ This will install all the grunt dependencies required by the Theme.
 
 
 * Now you can run ```grunt``` or ```grunt watch``` from the command line to begin the default ```watch``` task. This watches the SASS and Javascript (anything inside ```assets/js/src/```) files for changes, and combines them into ```style.css``` and ```assets/js/scripts.min.js``` respectively.
