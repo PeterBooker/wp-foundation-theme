@@ -51,4 +51,9 @@ git clone https://github.com/PeterBooker/wp-foundation-theme.git custom-folder-n
 * Now you can run ```grunt``` or ```grunt watch``` from the command line to begin the default ```watch``` task. This watches the SASS and Javascript files (anything inside ```assets/js/src/```) for changes, and combines them into ```style.css``` and ```assets/js/scripts.min.js``` respectively.
 
 
-* Now you are ready to begin customising the theme for your specific project. The styling (CSS) is altered using SASS, which imports the Foundation styling automatically. You can add your own custom styles to the ```assets/scss/_theme.scss``` using SASS or plain CSS. However, before making any changes you should navigate to the
+* Now you are ready to begin customising the theme for your specific project. The styling (CSS) is altered using SASS, which imports the Foundation styling automatically. You can add your own custom styles to the ```assets/scss/_theme.scss``` using SASS or plain CSS.
+
+## License
+
+
+The license is carried over from WordPress, GNU GPL v2.
