@@ -34,7 +34,7 @@ git clone https://github.com/PeterBooker/wp-foundation-theme.git custom-folder-n
  * ```Find "FOUNDATION_" replace with "CUSTOMNAME_"``` (replaces constants)
 
 
-* Then you need to customise the values inside of the ```package.json``` file (you can leave the bottom half under 'devDependencies'. These values are used to build the comments at the top of the ```style.css``` file (among other things), which tells WordPress about your theme.
+* Then you need to customise the values inside of the ```package.json``` file (you can leave the bottom half under 'devDependencies'). These values are used to build the comments at the top of the ```style.css``` file (among other things), which tells WordPress about your theme.
 
 
 * Now we need to make sure the relevant dependencies are installed. Navigate to the theme folder in the command line and run:
