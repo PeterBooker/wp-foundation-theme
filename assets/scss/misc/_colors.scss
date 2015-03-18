@@ -5,3 +5,28 @@
 /*--------------------------------------------------------------
 1.0 Main Website Colors
 --------------------------------------------------------------*/
+
+$kebo-background: #181818;
+$kebo-foreground: #222;
+
+$grey: #343740;
+$dark-grey: darken( $grey, 4% );
+$light-grey: lighten( $grey, 10% );
+
+$green: #82CD2B;
+$blue: #008AFF;
+$purple: #AA58E9;
+$orange: #FC5A20;
+
+.green {
+    color: $green;
+}
+.orange {
+    color: $orange;
+}
+.blue {
+    color: $blue;
+}
+.purple {
+    color: $purple;
+}
