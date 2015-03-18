@@ -17,9 +17,7 @@ This theme is aimed at developers and people who want to become more familiar wi
 * First clone the Theme from this repository, setting the folder to something relevant for your new theme. Alternatively, you can [download](https://github.com/PeterBooker/wp-foundation-theme/archive/master.zip) the latest version and unzip it manually.
 
 ```
-
 git clone https://github.com/PeterBooker/wp-foundation-theme.git custom-folder-name
-
 ```
 
 
