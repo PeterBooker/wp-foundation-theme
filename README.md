@@ -1,15 +1,15 @@
 # WP Foundation Theme
 
 
-A WordPress Starter Theme for creating completely custom themes, built using Underscores (_s) and Foundation 5. Grunt and Bower are used for maintaining components and preparing assets.
+A WordPress Starter Theme for creating completely custom themes, built using Underscores (_s), Foundation 5 and Font Awesome. Grunt and Bower are used for maintaining components and preparing assets.
 
 This theme is aimed at developers and people who want to become more familiar with using tools like SASS and Grunt in their projects.
 
 ## Requirements
 
 
-* [WordPress](https://wordpress.org/)
-* [NodeJS](https://nodejs.org/)
+* [WordPress] (https://wordpress.org/)
+* [NodeJS] (https://nodejs.org/)
 
 ## Usage
 
