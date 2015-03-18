@@ -183,7 +183,7 @@ require get_template_directory() . '/inc/menu-walkers.php';
 /**
  * Initialize the Foundation script on every page.
  */
-function foundation_foundation_init() {
+function foundation_foundationjs_init() {
 
     ?>
     <script type="text/javascript">
@@ -194,7 +194,7 @@ function foundation_foundation_init() {
     <?php
 
 }
-add_action( 'wp_footer', 'foundation_foundation_init', 20 );
+add_action( 'wp_footer', 'foundation_foundationjs_init', 20 );
 
 
 /**
