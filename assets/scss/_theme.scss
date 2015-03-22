@@ -10,12 +10,6 @@ object {
 }
 
 /*--------------------------------------------------------------
-0.0 Color Values
---------------------------------------------------------------*/
-
-$primary-color: #343740;
-
-/*--------------------------------------------------------------
 1.0 Main Layout
 --------------------------------------------------------------*/
 
@@ -118,9 +112,9 @@ article.page {
     }
 
     code {
-        background: darken( #fff, 90% );
+        background: darken( #fff, 3% );
         color: darken( #fff, 40% );
-        border: 1px solid darken( #fff, 80% );
+        border: 1px solid darken( #fff, 20% );
     }
 
     .form-allowed-tags {
@@ -145,6 +139,8 @@ article.page {
 
         .comment-body {
 
+            background: $white-smoke;
+            border: 1px solid $gainsboro;
             color: darken( #fff, 40% );
             margin-bottom: em-calc( 20 );
             padding: em-calc( 20 );
@@ -272,12 +268,18 @@ article.page {
 
 .footer-area {
 
+    background: $dark-grey;
     padding: em-calc( 30 ) 0;
+
+    h2 {
+        color: #fff;
+    }
 
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
+        color: #666;
     }
 
 }
