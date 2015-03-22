@@ -5,9 +5,13 @@
  * @package WP Foundation Theme
  */
 
-define( 'FOUNDATION_VERSION', '0.1.0' );
+$theme = wp_get_theme();
+
+define( 'FOUNDATION_VERSION', $theme->Version );
 define( 'FOUNDATION_URL', get_template_directory_uri() );
 define( 'FOUNDATION_PATH', get_template_directory() );
+
+unset( $theme );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -124,7 +128,7 @@ function foundation_enqueue_files() {
 
     if ( ! is_admin() ) {
 
-        wp_enqueue_style( 'foundation-style', get_stylesheet_uri() );
+        wp_enqueue_style( 'foundation-style', get_stylesheet_uri(), array(), FOUNDATION_VERSION );
 
         wp_enqueue_script( 'modernizr' );
 
