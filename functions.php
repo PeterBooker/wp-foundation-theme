@@ -272,3 +272,17 @@ function foundation_remove_recent_comments_style() {
     }
 }
 add_action( 'wp_head', 'foundation_remove_recent_comments_style', 1 );
+
+/**
+ * Replace .sticky class with .wp-sticky to avoid Foundation conflicts.
+ * Foundation Compatibility
+ */
+function foundation_remove_sticky_class( $classes ) {
+
+    $classes = array_diff( $classes, array( 'sticky' ) );
+    $classes[] = 'wp-sticky';
+
+    return $classes;
+
+}
+add_filter( 'post_class', 'foundation_remove_sticky_class' );
