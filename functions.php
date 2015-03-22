@@ -7,7 +7,7 @@
 
 $theme = wp_get_theme();
 
-define( 'FOUNDATION_VERSION', $theme->Version );
+define( 'FOUNDATION_VERSION', $theme->get( 'Version' ) );
 define( 'FOUNDATION_URL', get_template_directory_uri() );
 define( 'FOUNDATION_PATH', get_template_directory() );
 
