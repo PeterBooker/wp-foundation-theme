@@ -1,22 +1,22 @@
 {
-  "name": "wp-foundation-theme",
-  "title": "WP Foundation Theme",
-  "description": "A base WordPress Theme for creating completely custom themes, built using Underscores (_s) and Foundation 5. Grunt and Bower are used for maintaining components and preparing assets.",
-  "version": "0.1.0",
-  "homepage": "http://www.domain.com/",
-  "author": {
-    "name": "Author Name",
-    "email": "email@domain.com/",
-    "url": "http://www.domain.com/"
-  },
-  "devDependencies": {
-      "grunt": "~0.4.1",
-      "grunt-contrib-watch": "~0.5.3",
-      "grunt-contrib-concat": "~0.1.2",
-      "grunt-contrib-uglify": "~0.1.1",
-      "grunt-contrib-cssmin": "~0.6.0",
-      "grunt-contrib-watch": "~0.2.0",
-      "node-sass": "~1.2.3",
-      "grunt-sass": "~0.17.0"
-  }
+    "name": "wp-foundation-theme",
+    "title": "WP Foundation Theme",
+    "description": "A base WordPress Theme for creating completely custom themes, built using Underscores (_s) and Foundation 5. Grunt and Bower are used for maintaining components and preparing assets.",
+    "version": "0.1.0",
+    "homepage": "http://www.domain.com/",
+    "author": {
+        "name": "Author Name",
+        "email": "email@domain.com/",
+        "url": "http://www.domain.com/"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-contrib-concat": "~0.1.2",
+        "grunt-contrib-uglify": "~0.1.1",
+        "grunt-contrib-cssmin": "~0.6.0",
+        "grunt-contrib-watch": "~0.2.0",
+        "node-sass": "~1.2.3",
+        "grunt-sass": "~0.17.0"
+    }
 }
