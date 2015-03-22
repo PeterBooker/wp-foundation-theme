@@ -241,3 +241,30 @@ function foundation_default_admin_bar_fix() {
 
 }
 add_action( 'wp_head', 'foundation_default_admin_bar_fix', 5 );
+
+/**
+ * Remove injected CSS from recent comments widget
+ */
+
+function foundation_remove_wp_widget_recent_comments_style() {
+
+    if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
+
+        remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
+
+    }
+
+}
+add_filter( 'wp_head', 'foundation_remove_wp_widget_recent_comments_style', 1 );
+
+function foundation_remove_recent_comments_style() {
+
+    global $wp_widget_factory;
+
+    if ( isset( $wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ] ) ) {
+
+        remove_action( 'wp_head', array( $wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ], 'recent_comments_style' ) );
+
+    }
+}
+add_action( 'wp_head', 'foundation_remove_recent_comments_style', 1 );
