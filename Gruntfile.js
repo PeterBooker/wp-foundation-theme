@@ -22,9 +22,9 @@ module.exports = function(grunt) {
             },
             scripts: {
                 src: [
-                    'assets/js/custom.js',
-                    'assets/js/src/foundation.min.js',
-                    'assets/js/src/modernizr.js'
+                    // List the JS files to Concat
+                    'assets/js/src/custom.js',
+                    'assets/js/src/foundation.min.js'
                 ],
                 dest: 'assets/js/scripts.js'
             }
@@ -48,7 +48,10 @@ module.exports = function(grunt) {
         },
         sass: {
             options: {
-                includePaths: ['bower_components/foundation/scss']
+                includePaths: [
+                    'bower_components/foundation/scss',
+                    'bower_components/components-font-awesome/scss'
+                ]
             },
             dist: {
                 options: {
@@ -69,11 +72,32 @@ module.exports = function(grunt) {
                     ' * Author URI: <%= pkg.author.url %>\n' +
                     ' * Description: <%= pkg.description %>\n' +
                     ' * Version: <%= pkg.version %>\n' +
-                    ' */\n'
+                    ' */\n',
+                    keepSpecialComments: 0
                 },
                 files: {
                     'style.css': ['assets/css/app.css']
                 }
+            }
+        },
+        copy: {
+            main: {
+                files: {
+                    'assets/js/src/foundation.min.js': 'bower_components/foundation/js/foundation.min.js',
+                    'assets/js/src/modernizr.js': 'bower_components/modernizr/modernizr.js'
+                }
+            },
+            fonts: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'bower_components/components-font-awesome/fonts/',
+                        src: [
+                            '**',
+                        ],
+                        dest: 'assets/fonts/'
+                    }
+                ]
             }
         },
         watch: {
@@ -103,12 +127,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task.
     grunt.registerTask( 'default', ['watch', 'concat', 'jshint', 'uglify', 'sass', 'cssmin'] );
-    grunt.registerTask( 'update', ['concat'] );
+    grunt.registerTask( 'update', ['copy'] );
 
     grunt.util.linefeed = '\n';
 };
