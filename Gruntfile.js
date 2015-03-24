@@ -72,6 +72,8 @@ module.exports = function(grunt) {
                     ' * Author URI: <%= pkg.author.url %>\n' +
                     ' * Description: <%= pkg.description %>\n' +
                     ' * Version: <%= pkg.version %>\n' +
+                    ' * License: GNU General Public License v2 or later\n' +
+                    ' * License URI: http://www.gnu.org/licenses/gpl-2.0.html\n' +
                     ' */\n',
                     keepSpecialComments: 0
                 },
