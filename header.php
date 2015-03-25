@@ -58,7 +58,3 @@
         </header><!-- .site-header .row -->
 
     </div>
-
-    <div class="content-area">
-
-        <div id="content" class="site-content row">

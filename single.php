@@ -7,28 +7,37 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area small-12 medium-8 large-9 columns">
+    <div class="content-area">
 
-		<main id="main" class="site-main" role="main">
+        <div id="content" class="site-content row">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+            <div id="primary" class="content-area small-12 medium-8 large-8 columns">
 
-			<?php get_template_part( 'content', 'single' ); ?>
+                <main id="main" class="site-main" role="main">
 
-			<?php foundation_post_nav(); ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+                    <?php get_template_part( 'content', 'single' ); ?>
 
-		<?php endwhile; // end of the loop. ?>
+                    <?php foundation_post_nav(); ?>
 
-		</main><!-- #main -->
+                    <?php
+                        // If comments are open or we have at least one comment, load up the comment template
+                        if ( comments_open() || '0' != get_comments_number() ) :
+                            comments_template();
+                        endif;
+                    ?>
 
-	</div><!-- #primary -->
+                <?php endwhile; // end of the loop. ?>
 
-<?php get_sidebar(); ?>
+                </main><!-- #main -->
+
+            </div><!-- #primary -->
+
+            <?php get_sidebar(); ?>
+
+        </div><!-- #content .site-content .row -->
+
+    </div><!-- .content-area -->
+
 <?php get_footer(); ?>

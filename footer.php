@@ -8,10 +8,6 @@
  */
 ?>
 
-        </div><!-- #content .site-content .row -->
-
-    </div><!-- .content-area -->
-
     <div class="footer-area">
 
         <footer id="colophon" class="site-footer row" role="contentinfo">
