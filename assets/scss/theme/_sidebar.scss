@@ -6,7 +6,10 @@
 
     .widget {
 
-        padding-bottom: em-calc( 20 );
+        margin-bottom: em-calc( 20 );
+        border: 1px solid $gainsboro;
+        background: #fff;
+        padding: rem-calc( 20 );
 
         ul {
             list-style: none;
@@ -15,4 +18,12 @@
 
     }
 
+}
+
+/*--------------------------------------------------------------
+2.0 Search Widget
+--------------------------------------------------------------*/
+
+.widget.widget_search input {
+    margin-bottom: 0;
 }
