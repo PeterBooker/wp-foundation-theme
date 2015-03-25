@@ -6,6 +6,10 @@
 
     .widget {
 
+        .widget-title {
+            color: $charcoal;
+        }
+
         margin-bottom: em-calc( 20 );
         border: 1px solid $gainsboro;
         background: #fff;
