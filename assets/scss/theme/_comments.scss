@@ -10,12 +10,6 @@
         margin-bottom: em-calc( 20 );
     }
 
-    code {
-        background: darken( #fff, 3% );
-        color: darken( #fff, 40% );
-        border: 1px solid darken( #fff, 20% );
-    }
-
     .form-allowed-tags {
         font-size: rem-calc( 14 );
     }
@@ -30,10 +24,8 @@
         margin-left: 0;
 
         .children {
-
             list-style: none;
             margin-left: em-calc( 20 );
-
         }
 
         .comment-body {
@@ -82,7 +74,6 @@
                     padding-left: em-calc( 74 );
                     min-height: 25px;
                     margin-bottom: em-calc( 20 );
-
                     font-size: rem-calc( 12 );
 
                     a {
@@ -140,4 +131,22 @@
 
     }
 
+}
+
+/*--------------------------------------------------------------
+2.0 Comment Form
+--------------------------------------------------------------*/
+
+.comment-respond {
+    border: 1px solid $gainsboro;
+    background: #fff;
+    padding: rem-calc( 20 );
+
+    .form-submit {
+        margin: 0;
+
+        #submit {
+            margin: 0;
+        }
+    }
 }
