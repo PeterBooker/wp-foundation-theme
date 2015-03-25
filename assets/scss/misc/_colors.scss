@@ -1,11 +1,6 @@
-/*
- * WP Foundation Theme Color Variables
- */
-
 /*--------------------------------------------------------------
 1.0 Main Website Colors
 --------------------------------------------------------------*/
-
 
 // We use these as default colors throughout
 $primary-color: #FC5A20; // #008CBA
@@ -15,12 +10,13 @@ $primary-color: #FC5A20; // #008CBA
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-$kebo-background: #181818;
-$kebo-foreground: #222;
-
 $grey: #343740;
 $dark-grey: darken( $grey, 4% );
 $light-grey: lighten( $grey, 10% );
+
+/*--------------------------------------------------------------
+2.0 Content Colours
+--------------------------------------------------------------*/
 
 $green: #82CD2B;
 $blue: #008AFF;
@@ -38,7 +34,4 @@ $orange: #FC5A20;
 }
 .purple {
     color: $purple;
-}
-.brown {
-    color: #fff;
 }
