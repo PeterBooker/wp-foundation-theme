@@ -40,6 +40,7 @@ if ( ! function_exists( 'foundation_post_nav' ) ) :
  * Display navigation to next/previous post when applicable.
  */
 function foundation_post_nav() {
+
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -58,6 +59,7 @@ function foundation_post_nav() {
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
+
 }
 endif;
 
@@ -66,7 +68,9 @@ if ( ! function_exists( 'foundation_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function foundation_posted_on() {
+
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	}
@@ -129,8 +133,10 @@ function foundation_categorized_blog() {
  * Flush out the transients used in foundation_categorized_blog.
  */
 function foundation_category_transient_flusher() {
+
 	// Like, beat it. Dig?
 	delete_transient( 'foundation_categories' );
+
 }
 add_action( 'edit_category', 'foundation_category_transient_flusher' );
 add_action( 'save_post',     'foundation_category_transient_flusher' );
