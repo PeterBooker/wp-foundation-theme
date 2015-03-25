@@ -19,8 +19,14 @@ body {
 .menu-area {
 
 }
+.header-area {
+
+}
 .site-main {
 
+}
+.content-area {
+    background: $ghost;
 }
 .site-content {
     padding: em-calc( 40 ) 0;
@@ -52,7 +58,7 @@ body {
     }
 
     .site-description {
-        margin: 0 0 em-calc( 40 );
+        margin: em-calc( 40 ) 0;
         text-align: center;
         color: #ccc;
     }
@@ -67,6 +73,79 @@ article.post,
 article.page {
     position: relative;
     padding: em-calc( 20 ) em-calc( 10 );
+}
+
+article.post {
+
+    .entry-thumbnail {
+        border: 1px solid $gainsboro;
+        border-bottom: none;
+    }
+
+    .entry-image {
+        margin-top: em-calc( 10 );
+        margin-bottom: em-calc( 20 );
+    }
+
+    .entry-inner {
+        border: 1px solid $gainsboro;
+        padding: em-calc( 18 );
+        background: #fff;
+
+        &.with {
+            border-top: none;
+        }
+    }
+
+    .entry-header {
+
+        margin-bottom: em-calc( 20 );
+
+      .entry-title {
+          margin: 0;
+      }
+
+      .entry-meta {
+          font-size: rem-calc( 14 );
+      }
+
+    }
+
+    .entry-content {
+        margin-top: em-calc( 20 );
+    }
+
+    .entry-footer {
+
+        font-size: rem-calc( 14 );
+        margin-bottom: em-calc( 8 );
+
+      span {
+
+          margin-right: em-calc( 8 );
+
+        i.fa {
+            margin-right: em-calc( 2 );
+        }
+
+        i.fa-comments,
+        i.fa-cog {
+            margin-right: em-calc( 6 );
+        }
+
+        i {
+            color: $monsoon;
+        }
+
+      }
+
+    }
+
+    &:first-of-type {
+        padding-top: 0;
+        border-top: 0;
+    }
+
 }
 
 .navigation.post-navigation,
@@ -187,13 +266,13 @@ article.page {
                     font-size: rem-calc( 12 );
 
                     a {
-                        color: #777;
+                        color: $monsoon;
                     }
 
                     a:hover,
                     a:focus,
                     a:active {
-                        color: #555;
+                        color: $charcoal;
                     }
 
                     .edit-link {
@@ -384,20 +463,32 @@ article.page {
 10.0 Admin Bar Off Canvas Menu Compatibility
 --------------------------------------------------------------*/
 
+/*
+ * Offset the Top Bar Menu in line with the size change of the WP Admin Bar
+ * Currently WP Admin Bar breakpoint 780px
+ */
+
 body.admin-bar {
-    padding-top: 46px;
+    //padding-top: 46px;
+
+    #wpadminbar {
+        position: fixed;
+    }
+
+    .contain-to-grid.fixed {
+        margin-top: 46px;
+    }
+
 }
 @media ( min-width: 780px ) {
 
     body.admin-bar {
-        padding-top: 32px;
-    }
+        //padding-top: 32px;
 
-}
-@media #{$small-only} {
+        .contain-to-grid.fixed {
+            margin-top: 32px;
+        }
 
-    #wpadminbar {
-        position: fixed;
     }
 
 }
