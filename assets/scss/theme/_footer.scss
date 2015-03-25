@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+1.0 Footer
+--------------------------------------------------------------*/
+
+.footer-area {
+
+    background: $dark-grey;
+    padding: em-calc( 30 ) 0;
+
+    h2 {
+        color: #fff;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: #666;
+    }
+
+}
+
+.info-area {
+
+    background: #222;
+
+    .site-info {
+
+        p {
+            margin: em-calc( 20 ) 0;
+            color: #fff;
+        }
+
+    }
+
+}

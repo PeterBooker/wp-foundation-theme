@@ -1,0 +1,92 @@
+/*--------------------------------------------------------------
+1.0 WordPress Specific Styles
+--------------------------------------------------------------*/
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+2.0 Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+3.0 Clearings
+--------------------------------------------------------------*/
+
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+    content: "";
+    display: table;
+}
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+    clear: both;
+}
+
+/*--------------------------------------------------------------
+4.0 Admin Bar Off Canvas Menu Compatibility
+--------------------------------------------------------------*/
+
+/*
+ * Offset the Top Bar Menu in line with the size change of the WP Admin Bar
+ * Currently WP Admin Bar breakpoint 780px
+ */
+
+body.admin-bar {
+    //padding-top: 46px;
+
+    #wpadminbar {
+        position: fixed;
+    }
+
+    .contain-to-grid.fixed {
+        margin-top: 46px;
+    }
+
+}
+@media ( min-width: 780px ) {
+
+    body.admin-bar {
+        //padding-top: 32px;
+
+        .contain-to-grid.fixed {
+            margin-top: 32px;
+        }
+
+    }
+
+}

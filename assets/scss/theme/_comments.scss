@@ -1,0 +1,143 @@
+/*--------------------------------------------------------------
+1.0 Comments
+--------------------------------------------------------------*/
+
+.comments-area {
+
+    padding: 0 em-calc( 10 );
+
+    .comments-title {
+        margin-bottom: em-calc( 20 );
+    }
+
+    code {
+        background: darken( #fff, 3% );
+        color: darken( #fff, 40% );
+        border: 1px solid darken( #fff, 20% );
+    }
+
+    .form-allowed-tags {
+        font-size: rem-calc( 14 );
+    }
+
+    .form-submit #submit {
+        @include button( rem-calc( 12 ) );
+    }
+
+    .comment-list {
+
+        list-style: none;
+        margin-left: 0;
+
+        .children {
+
+            list-style: none;
+            margin-left: em-calc( 20 );
+
+        }
+
+        .comment-body {
+
+            background: $white-smoke;
+            border: 1px solid $gainsboro;
+            color: darken( #fff, 40% );
+            margin-bottom: em-calc( 20 );
+            padding: em-calc( 20 );
+            position: relative;
+
+            .comment-meta {
+
+                overflow: hidden;
+
+                .comment-author {
+
+                    border: none;
+                    padding: 0 0 0 em-calc( 74 );
+                    margin-bottom: em-calc( 0 );
+                    display: block;
+                    min-height: 25px;
+                    line-height: 1.1em;
+
+                    .fn {
+                        font-weight: bold;
+                        color: $primary-color;
+                    }
+
+                    .says {
+                        display: none;
+                    }
+
+                    img {
+                        position: absolute;
+                        top: em-calc( 18 );
+                        left: em-calc( 18 );
+                        max-width: 50px;
+                    }
+
+                }
+
+                .comment-metadata {
+
+                    display: block;
+                    padding-left: em-calc( 74 );
+                    min-height: 25px;
+                    margin-bottom: em-calc( 20 );
+
+                    font-size: rem-calc( 12 );
+
+                    a {
+                        color: $monsoon;
+                    }
+
+                    a:hover,
+                    a:focus,
+                    a:active {
+                        color: $charcoal;
+                    }
+
+                    .edit-link {
+
+                        position: absolute;
+                        bottom: em-calc( 18 );
+                        right: em-calc( 18 );
+                        font-size: rem-calc( 14 );
+
+                        a:before {
+                            font-family: FontAwesome;
+                            content: "\f013"; // Font-Awesome .fa-reply Icon
+                            margin-right: em-calc( 8 );
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .reply {
+
+            font-size: rem-calc( 14 );
+
+            a:before {
+                font-family: FontAwesome;
+                content: $fa-var-mail-reply; // Font-Awesome .fa-reply Icon
+                margin-right: em-calc( 8 );
+            }
+
+            a {
+                color: #777;
+            }
+
+            a:hover,
+            a:focus,
+            a:active {
+                color: #555;
+            }
+
+        }
+
+    }
+
+}

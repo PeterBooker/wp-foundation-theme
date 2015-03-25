@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------
+1.0 Header
+--------------------------------------------------------------*/
+
+.header-area {
+    background: #666;
+}
+
+.site-header {
+
+    .site-title {
+        margin: em-calc( 40 ) 0;
+        text-align: center;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .site-description {
+        margin: em-calc( 40 ) 0;
+        text-align: center;
+        color: #ccc;
+    }
+
+}
