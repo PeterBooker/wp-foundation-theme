@@ -26,7 +26,7 @@
 
         <?php endif; ?>
 
-        <div class="entry-inner">
+        <div class="entry-inner<?php if ( has_post_thumbnail() ) { ' with-image'; } ?>">
 
             <header class="entry-header">
 
