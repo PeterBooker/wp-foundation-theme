@@ -19,18 +19,21 @@ function foundation_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
+
 		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'foundation' ); ?></h1>
+
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="button"><i class="fa fa-fw fa-arrow-left"></i>Older posts</span>', 'foundation' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="button"><i class="fa fa-arrow-left"></i>&nbsp; Older posts</span>', 'foundation' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( '<span class="button">Newer posts <i class="fa fa-fw fa-arrow-right"></i></span>', 'foundation' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( '<span class="button">Newer posts &nbsp;<i class="fa fa-arrow-right"></i></span>', 'foundation' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
+
 	</nav><!-- .navigation -->
 	<?php
 
