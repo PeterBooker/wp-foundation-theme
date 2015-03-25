@@ -13,18 +13,14 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area small-12 medium-12 large-12 columns">
+	<div id="primary" class="small-12 medium-8 large-9 columns">
 
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
-			<ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-1">
-
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<li>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.
@@ -34,11 +30,7 @@ get_header(); ?>
 					get_template_part( 'content', get_post_format() );
 				?>
 
-				</li>
-
 			<?php endwhile; ?>
-
-			</ul>
 
 			<?php foundation_paging_nav(); ?>
 
@@ -52,5 +44,5 @@ get_header(); ?>
 
 	</div><!-- #primary -->
 
-<?php //get_sidebar(); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
