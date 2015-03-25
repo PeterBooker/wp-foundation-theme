@@ -16,7 +16,7 @@
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <link rel="icon" href="<?php echo get_stylesheet_directory_uri( '/assets/imgs/favicon.ico' ); ?>" type="image/x-icon">
+    <link rel="icon" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/imgs/icons/favicon.ico' ); ?>" type="image/x-icon">
 
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
