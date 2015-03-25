@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 .header-area {
-    background: #666;
+    background: $grey;
 }
 
 .site-header {
@@ -20,7 +20,7 @@
     .site-description {
         margin: em-calc( 40 ) 0;
         text-align: center;
-        color: #ccc;
+        color: #fff;
     }
 
 }
