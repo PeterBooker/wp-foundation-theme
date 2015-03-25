@@ -10,7 +10,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<div id="secondary" class="widget-area small-12 medium-4 large-3 columns small-only-text-center" role="complementary">
+<div id="secondary" class="widget-area small-12 medium-4 large-4 columns small-only-text-center" role="complementary">
 
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 

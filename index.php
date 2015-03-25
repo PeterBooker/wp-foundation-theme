@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="small-12 medium-8 large-9 columns">
+	<div id="primary" class="small-12 medium-8 large-8 columns">
 
 		<main id="main" class="site-main" role="main">
 
