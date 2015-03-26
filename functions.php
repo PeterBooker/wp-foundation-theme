@@ -286,3 +286,29 @@ function foundation_remove_sticky_class( $classes ) {
 
 }
 add_filter( 'post_class', 'foundation_remove_sticky_class' );
+
+/**
+ * Customize the Post Password Form
+ */
+function foundation_custom_password_form( $content ) {
+
+    global $post;
+    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+    $password_text = __( 'Password:' );
+
+    $output = "<form action='" . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . "' class='post-password-form' method='post'>";
+    $output .= "<label for='" . $label . "'>$password_text<span class='screen-reader-text'>" . $password_text . "</span></label>";
+    $output .= "<div class='row collapse'>";
+    $output .= "<div class='small-8 medium-8 large-8 columns'>";
+    $output .= "<input name='post_password' id='" . $label . "' type='password'>";
+    $output .= "</div>";
+    $output .= "<div class='small-4 medium-4 large-4 columns'>";
+    $output .= "<input type='submit' class='button postfix' name='Submit' value='" . esc_attr__( 'Submit' ) . "' />";
+    $output .= "</div>";
+    $output .= "</div>";
+    $output .= "</form>";
+
+    return $output;
+
+}
+add_filter( 'the_password_form', 'foundation_custom_password_form' );
