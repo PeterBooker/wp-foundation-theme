@@ -71,14 +71,17 @@ $wp_admin_bar_breakpoint: 780px;
 
 body.admin-bar {
 
+    // Top Bar
     #wpadminbar {
         position: fixed;
     }
 
+    // Top Bar
     .contain-to-grid.fixed {
         margin-top: $wp_admin_bar_small;
     }
 
+    // Clearing Gallery
     .clearing-container {
         margin-top: $wp_admin_bar_small;
     }
@@ -88,10 +91,12 @@ body.admin-bar {
 
     body.admin-bar {
 
+        // Top Bar
         .contain-to-grid.fixed {
             margin-top: $wp_admin_bar_large;
         }
 
+        // Clearing Gallery
         .clearing-container {
             margin-top: $wp_admin_bar_large;
         }
