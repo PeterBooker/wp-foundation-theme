@@ -77,7 +77,8 @@ body.admin-bar {
     }
 
     // Top Bar
-    .contain-to-grid.fixed {
+    .contain-to-grid.fixed,
+    .contain-to-grid.sticky {
         margin-top: $wp_admin_bar_small;
     }
 
@@ -92,7 +93,8 @@ body.admin-bar {
     body.admin-bar {
 
         // Top Bar
-        .contain-to-grid.fixed {
+        .contain-to-grid.fixed,
+        .contain-to-grid.sticky {
             margin-top: $wp_admin_bar_large;
         }
 
