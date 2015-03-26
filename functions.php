@@ -317,3 +317,13 @@ function foundation_custom_password_form( $content ) {
 
 }
 add_filter( 'the_password_form', 'foundation_custom_password_form' );
+
+/**
+ * Customize the Video oEmbed Output
+ */
+function foundation_video_embed_output( $html, $url, $attr ) {
+
+    return "<div class=\"flex-video\">" . $html . "</div>";
+
+}
+add_filter( 'embed_oembed_html', 'foundation_video_embed_output', 10, 3 );
