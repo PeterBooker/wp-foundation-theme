@@ -19,6 +19,7 @@
             'menu_class' => 'right',
             'theme_location' => 'primary',
             'walker' => new WP_Foundation_TopBar(),
+            'fallback_cb' => false,
         ) );
         ?>
 
