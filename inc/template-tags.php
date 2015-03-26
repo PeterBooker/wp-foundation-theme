@@ -25,11 +25,11 @@ function foundation_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="button"><i class="fa fa-arrow-left"></i>&nbsp; Older posts</span>', 'foundation' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="button"><i class="fa fa-arrow-left"></i>&nbsp;Older posts</span>', 'foundation' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( '<span class="button">Newer posts &nbsp;<i class="fa fa-arrow-right"></i></span>', 'foundation' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( '<span class="button">Newer posts&nbsp;<i class="fa fa-arrow-right"></i></span>', 'foundation' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -58,8 +58,8 @@ function foundation_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'foundation' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'foundation' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'foundation' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="button secondary"><i class="fa fa-arrow-left"></i>&nbsp;%title</span>', 'Previous post link', 'foundation' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '<span class="button secondary">%title&nbsp;<i class="fa fa-arrow-right"></i></span>', 'Next post link',     'foundation' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
