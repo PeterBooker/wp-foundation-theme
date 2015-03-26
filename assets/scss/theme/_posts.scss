@@ -6,6 +6,11 @@ article.post,
 article.page {
     position: relative;
     padding: em-calc( 20 ) em-calc( 10 );
+
+    .edit-link i {
+        margin-right: rem-calc( 6 );
+        color: $monsoon;
+    }
 }
 
 article.post {
@@ -63,7 +68,7 @@ article.post {
 
             i.fa-comments,
             i.fa-cog {
-                margin-right: em-calc( 6 );
+                margin-right: rem-calc( 6 );
             }
 
             i {
