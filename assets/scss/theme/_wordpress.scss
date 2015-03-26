@@ -58,33 +58,42 @@ object {
 }
 
 /*--------------------------------------------------------------
-4.0 Admin Bar Off Canvas Menu Compatibility
+4.0 Admin Bar Foundation Compatibility
 --------------------------------------------------------------*/
 
 /*
  * Offset the Top Bar Menu in line with the size change of the WP Admin Bar
  * Currently WP Admin Bar breakpoint 780px
  */
+$wp_admin_bar_small: 46px;
+$wp_admin_bar_large: 32px;
+$wp_admin_bar_breakpoint: 780px;
 
 body.admin-bar {
-    //padding-top: 46px;
 
     #wpadminbar {
         position: fixed;
     }
 
     .contain-to-grid.fixed {
-        margin-top: 46px;
+        margin-top: $wp_admin_bar_small;
+    }
+
+    .clearing-container {
+        margin-top: $wp_admin_bar_small;
     }
 
 }
-@media ( min-width: 780px ) {
+@media ( min-width: $wp_admin_bar_breakpoint ) {
 
     body.admin-bar {
-        //padding-top: 32px;
 
         .contain-to-grid.fixed {
-            margin-top: 32px;
+            margin-top: $wp_admin_bar_large;
+        }
+
+        .clearing-container {
+            margin-top: $wp_admin_bar_large;
         }
 
     }
