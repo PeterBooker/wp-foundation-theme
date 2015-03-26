@@ -5,6 +5,11 @@ A WordPress Starter Theme for creating completely custom themes, built using Und
 
 This theme is aimed at developers and people who want to become more familiar with using tools like SASS and Grunt in their projects.
 
+## Screenshot
+
+
+![Example Screenshot](screenshot.png?raw=true "Example Screenshot")
+
 ## Requirements
 
 
