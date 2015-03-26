@@ -7,8 +7,9 @@
     background: $dark-grey;
     padding: em-calc( 30 ) 0;
 
-    h2 {
+    h1, h2, h3, h4, h5, h6 {
         color: #fff;
+        font-weight: normal;
     }
 
     ul {
