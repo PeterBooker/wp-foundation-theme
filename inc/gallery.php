@@ -20,9 +20,12 @@ function foundation_gallery_output( $output, $attr ) {
 
     // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
     if ( isset( $attr['orderby'] ) ) {
+
         $attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
-        if ( !$attr['orderby'] )
+        if ( ! $attr['orderby'] ) {
             unset( $attr['orderby'] );
+        }
+
     }
 
     extract( shortcode_atts( array(
@@ -43,16 +46,22 @@ function foundation_gallery_output( $output, $attr ) {
     if ( 'RAND' == $order ) $orderby = 'none';
 
     if ( ! empty( $include ) ) {
+
         $_attachments = get_posts( array( 'include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
 
         $attachments = array();
         foreach ( $_attachments as $key => $val ) {
             $attachments[$val->ID] = $_attachments[$key];
         }
+
     } elseif ( ! empty( $exclude ) ) {
+
         $attachments = get_children( array( 'post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
+
     } else {
+
         $attachments = get_children( array( 'post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby ) );
+
     }
 
     if ( empty( $attachments ) )
@@ -65,7 +74,7 @@ function foundation_gallery_output( $output, $attr ) {
         return $output;
     }
 
-    $columns = intval( $columns );
+    $columns = intval( $columns ); // Use this??
 
     $selector = "gallery-{$instance}";
 
