@@ -65,9 +65,9 @@ object {
  * Offset the Top Bar Menu in line with the size change of the WP Admin Bar
  * Currently WP Admin Bar breakpoint 780px
  */
-$wp_admin_bar_small: 46px;
-$wp_admin_bar_large: 32px;
-$wp_admin_bar_breakpoint: 780px;
+$wp_admin_bar_small: 46px; // Height on Small screens
+$wp_admin_bar_large: 32px; // Height on Large screens
+$wp_admin_bar_breakpoint: 780px; // Media Breakpoint
 
 body.admin-bar {
 
