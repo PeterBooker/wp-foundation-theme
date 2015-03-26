@@ -30,9 +30,9 @@
 
         .comment-body {
 
-            background: $white-smoke;
+            background: $white;
             border: 1px solid $gainsboro;
-            color: darken( #fff, 40% );
+            color: darken( $white, 40% );
             margin-bottom: em-calc( 20 );
             padding: em-calc( 20 );
             position: relative;
