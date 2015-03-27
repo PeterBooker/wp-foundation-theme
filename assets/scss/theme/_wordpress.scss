@@ -71,13 +71,15 @@ $wp_admin_bar_breakpoint: 780px; // Media Breakpoint
 
 body.admin-bar {
 
+    padding-top: 46px;
+
     // Top Bar
     #wpadminbar {
-        //position: fixed;
+        position: fixed;
     }
 
     // Top Bar
-    .contain-to-grid.sticky.fixed {
+    .sticky.fixed {
         margin-top: $wp_admin_bar_small;
     }
 
@@ -91,8 +93,10 @@ body.admin-bar {
 
     body.admin-bar {
 
+        padding-top: 32px;
+
         // Top Bar
-        .contain-to-grid.sticky.fixed {
+        .sticky.fixed {
              margin-top: $wp_admin_bar_large;
         }
 
