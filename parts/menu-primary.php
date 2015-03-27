@@ -15,11 +15,9 @@
     <section class="top-bar-section">
         <?php
         wp_nav_menu( array(
-            'container' => false,
             'menu_class' => 'right',
             'theme_location' => 'primary',
             'walker' => new WP_Foundation_TopBar(),
-            'fallback_cb' => false,
         ) );
         ?>
 
