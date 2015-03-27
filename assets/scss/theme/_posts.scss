@@ -5,7 +5,6 @@
 article.post,
 article.page {
     position: relative;
-    padding: em-calc( 20 ) em-calc( 10 );
 
     .edit-link i {
         margin-right: rem-calc( 6 );
@@ -14,6 +13,8 @@ article.page {
 }
 
 article.post {
+
+    padding: em-calc( 20 ) 0;
 
     .entry-thumbnail {
         border: 1px solid $gainsboro;
@@ -89,10 +90,7 @@ article.post {
 .navigation.post-navigation,
 .navigation.paging-navigation {
 
-    padding: 0 em-calc( 25 );
     margin-bottom: em-calc( 20 );
-    margin-left: -15px;
-    margin-right: -15px;
     overflow: hidden;
 
     .nav-previous,
