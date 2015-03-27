@@ -14,6 +14,12 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
     class WP_Foundation_TopBar extends Walker_Nav_Menu {
 
         /*
+         * Default height of Foundation TopBar
+         * Change if you customise the height
+         */
+        private static $height = '40px';
+
+        /*
          * Add Top Bar specific CSS classes to menu items
          */
         function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
@@ -99,6 +105,9 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
 
         }
 
+        /*
+         * Build attributes string
+         */
         private function build_attributes( $item ) {
 
             $attributes = '';
@@ -111,37 +120,110 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
 
         }
 
-    }
+        /*
+         * Provide fallback output incase no Menu is selected.
+         */
+        public static function fallback( $args = array() ) {
 
-}
+            $home_url = site_url( '/' );
 
-/**
- * Helper Functions to support Compatibility
- */
+            $admin_menu_url = admin_url( '/nav-menus.php' );
 
-/*
- * If using Top Bar at the top of the page, this ensures that it sits under the WordPress Admin Bar when it is active.
- */
-if ( ! function_exists( 'wp_foundation_admin_bar_fix' ) ) {
+            $output = "<ul class=\"right\">\n";
 
-    function wp_foundation_admin_bar_offset() {
+            $output .= "<li class=\"menu-item\">\n";
+            $output .= "<a href=\"{$home_url}\">Home</a>\n";
+            $output .= "</li>\n";
 
-        if ( ! is_admin() && is_admin_bar_showing() ) {
+            if ( current_user_can( 'manage_options' ) ) {
 
-            remove_action( 'wp_head', '_admin_bar_bump_cb' );
+                $output .= "<li class=\"menu-item\">\n";
+                $output .= "<a href=\"{$admin_menu_url}\">Customise Menu</a>\n";
+                $output .= "</li>\n";
 
-            $output = '<style type="text/css">' . "\n\t";
-            $output .= 'body.admin-bar { padding-top: 46px; }' . "\n\t";
-            $output .= '@media ( min-width: 780px ) { body.admin-bar { padding-top: 32px; } }' . "\n";
-            $output .= '</style>' . "\n";
+            }
+
+            $output .= "</ul>";
 
             echo $output;
 
         }
 
+        /*
+         * Filter Menu Args relevant for this Walker
+         */
+        public static function menu_args( $args ) {
+
+            $walker = new WP_Foundation_TopBar();
+
+            if ( $walker == $args['walker'] ) {
+                $args['container'] = false;
+                $args['fallback_cb'] = 'WP_Foundation_TopBar::fallback';
+            }
+
+            unset( $walker );
+
+            return $args;
+
+        }
+
+        /*
+         * Sticky TopBar + WP Admin Bar Fix
+         */
+        public static function sticky_fix() {
+
+            if ( ! is_admin() && is_admin_bar_showing() ) {
+
+                remove_action( 'wp_head', '_admin_bar_bump_cb' );
+
+                $output = '<style type="text/css">' . "\n\t";
+                $output .= 'body.admin-bar #wpadminbar { position: fixed; }' . "\n\t";
+                $output .= 'body.admin-bar { padding-top: 46px; }' . "\n\t";
+                $output .= 'body.admin-bar .sticky.fixed { margin-top: 46px; }' . "\n\t";
+                $output .= '@media ( min-width: 782px ) { body.admin-bar .sticky.fixed { margin-top: 32px; } }' . "\n\t";
+                $output .= '@media ( min-width: 782px ) { body.admin-bar { padding-top: 32px; } }' . "\n\t";
+                $output .= '</style>' . "\n";
+
+                echo $output;
+
+            }
+
+        }
+
+        /*
+         * Fixed TopBar + WP Admin Bar Fix
+         */
+        public static function fixed_fix() {
+
+            if ( ! is_admin() && is_admin_bar_showing() ) {
+
+                remove_action( 'wp_head', '_admin_bar_bump_cb' );
+
+                $height = WP_Foundation_TopBar::$height;
+
+                $output = '<style type="text/css">' . "\n\t";
+                $output .= 'body.admin-bar #wpadminbar { position: fixed; }' . "\n\t";
+                $output .= 'body.admin-bar .fixed { margin-top: 46px; } body.admin-bar .fixed + div { margin-top: ' . $height . '; } body.admin-bar .fixed.expanded { margin-top: 0; }' . "\n\t";
+                $output .= '@media ( min-width: 782px ) { body.admin-bar .fixed { margin-top: 32px; } body.admin-bar .fixed + div { margin-top: ' . $height . '; } body.admin-bar .fixed.expanded { margin-top: 0; } }' . "\n\t";
+                $output .= '</style>' . "\n";
+
+                echo $output;
+
+            }
+
+        }
+
     }
-    //add_action( 'wp_head', 'wp_foundation_admin_bar_offset' );
-    // Disabled as this is added to the main CSS file manually, left in for reference.
-    // The remove action is added alone via the functions.php
+    // Force Certain Args for Compatibility
+    add_filter( 'wp_nav_menu_args', array( 'WP_Foundation_TopBar', 'menu_args' ) );
+
+
+    /*
+     * Uncomment the relevant fix depending on your TopBar use, or add the CSS to your theme manually.
+     */
+    // Sticky TopBar + WP Admin Bar Fix
+    //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'sticky_fix' ), 5, 0 );
+    // Fixed TopBar + WP Admin Bar Fix
+    //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'fixed_fix' ), 5, 0 );
 
 }
