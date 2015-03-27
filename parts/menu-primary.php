@@ -22,9 +22,7 @@
         ?>
 
         <!-- Left Nav Section -->
-        <ul class="left">
-
-        </ul>
+        <ul class="left"></ul>
     </section>
 
 </nav>
