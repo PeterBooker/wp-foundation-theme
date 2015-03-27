@@ -38,7 +38,7 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
         }
 
         /*
-         * The start of the menu
+         * Start new Menu level
          */
         function start_lvl( &$output, $depth = 0, $args = array() ) {
 
@@ -48,7 +48,7 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
         }
 
         /*
-         * The end of the menu
+         * End new Menu level
          */
         function end_lvl( &$output, $depth = 0, $args = array() ) {
 
@@ -58,7 +58,7 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
         }
 
         /*
-         * The start of each menu item
+         * Start new Menu item
          */
         function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
@@ -97,7 +97,7 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
         }
 
         /*
-         * The end of each menu item
+         * End new Menu item
          */
         function end_el( &$output, $item, $depth = 0, $args = array() ) {
 
@@ -124,6 +124,17 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
          * Provide fallback output incase no Menu is selected.
          */
         public static function fallback( $args = array() ) {
+
+            /*
+             * No content for left side Fallback
+             */
+            if ( 'left' == $args['menu_class'] ) {
+
+                echo "<ul class=\"left\"></ul>";
+
+                return;
+
+            }
 
             $home_url = site_url( '/' );
 
@@ -154,14 +165,12 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
          */
         public static function menu_args( $args ) {
 
-            $walker = new WP_Foundation_TopBar();
+            if ( $args['walker'] instanceof WP_Foundation_TopBar ) {
 
-            if ( $walker == $args['walker'] ) {
                 $args['container'] = false;
                 $args['fallback_cb'] = 'WP_Foundation_TopBar::fallback';
-            }
 
-            unset( $walker );
+            }
 
             return $args;
 
