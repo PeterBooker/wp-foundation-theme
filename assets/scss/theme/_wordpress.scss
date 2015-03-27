@@ -71,34 +71,49 @@ $wp_admin_bar_breakpoint: 782px; // Media Breakpoint
 
 body.admin-bar {
 
+    // Start - Top Bar
     padding-top: 46px;
 
-    // Top Bar
     #wpadminbar {
         position: fixed;
     }
 
-    // Top Bar
-    .sticky.fixed {
-        margin-top: $wp_admin_bar_small;
+    .fixed {
+        margin-top: 46px;
     }
 
-    // Clearing Gallery
+    .fixed + div {
+        margin-top: $topbar-height;
+    }
+
+    .fixed.expanded {
+        margin-top: 0;
+    }
+    // End - Top Bar
+
+    // Start - Clearing Gallery
     .clearing-blackout {
         padding-top: $wp_admin_bar_small;
     }
+    // End - Clearing Gallery
 
 }
 @media ( min-width: $wp_admin_bar_breakpoint ) {
 
     body.admin-bar {
 
+        // Start - Top Bar
         padding-top: 32px;
 
-        // Top Bar
-        .sticky.fixed {
-             margin-top: $wp_admin_bar_large;
+
+        .fixed {
+            margin-top: 32px;
         }
+
+        .fixed + div {
+            margin-top: $topbar-height;
+        }
+        // End - Top Bar
 
         // Clearing Gallery
         .clearing-blackout {
