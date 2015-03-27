@@ -37,7 +37,7 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'foundation' ); ?></a>
 
-    <div class="top-area sticky contain-to-grid">
+    <div class="top-area fixed contain-to-grid">
 
         <?php get_template_part( 'parts/menu', 'primary' ); ?>
 
