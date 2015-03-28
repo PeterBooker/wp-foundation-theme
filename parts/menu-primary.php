@@ -13,16 +13,23 @@
     </ul>
 
     <section class="top-bar-section">
+        <!-- Right Nav Section -->
         <?php
         wp_nav_menu( array(
             'menu_class' => 'right',
-            'theme_location' => 'primary',
+            'theme_location' => 'topbar-right',
             'walker' => new WP_Foundation_TopBar(),
         ) );
         ?>
 
         <!-- Left Nav Section -->
-        <ul class="left"></ul>
+        <?php
+        wp_nav_menu( array(
+            'menu_class' => 'left',
+            'theme_location' => 'topbar-left',
+            'walker' => new WP_Foundation_TopBar(),
+        ) );
+        ?>
     </section>
 
 </nav>
