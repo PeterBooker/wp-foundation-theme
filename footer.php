@@ -21,34 +21,32 @@
 
                 <li>
                     <h2>Title #2</h2>
-                    <ul>
+                    <ul class="side-nav">
                         <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #1</a></li>
+                        <li><a href="#">Link #2</a></li>
+                        <li><a href="#">Link #3</a></li>
+                        <li><a href="#">Link #4</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <h2>Title #3</h2>
-                    <ul>
-                        <li>List Item #1</li>
-                        <li>List Item #2</li>
-                        <li>List Item #3</li>
-                        <li>List Item #4</li>
-                        <li>List Item #5</li>
-                    </ul>
+                    <?php
+                    wp_nav_menu( array(
+                        'container' => false,
+                        'menu_class' => 'side-nav',
+                        'theme_location' => 'footer-menu',
+                    ) );
+                    ?>
                 </li>
 
                 <li>
                     <h2>Title #4</h2>
-                    <ul>
+                    <ul class="side-nav">
                         <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #1</a></li>
+                        <li><a href="#">Link #2</a></li>
+                        <li><a href="#">Link #3</a></li>
+                        <li><a href="#">Link #4</a></li>
                     </ul>
                 </li>
 
