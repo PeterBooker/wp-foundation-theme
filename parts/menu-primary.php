@@ -18,7 +18,7 @@
         wp_nav_menu( array(
             'menu_class' => 'right',
             'theme_location' => 'topbar-right',
-            'walker' => new WP_Foundation_TopBar(),
+            'walker' => new WP_TopBar_Walker(),
         ) );
         ?>
 
@@ -27,7 +27,7 @@
         wp_nav_menu( array(
             'menu_class' => 'left',
             'theme_location' => 'topbar-left',
-            'walker' => new WP_Foundation_TopBar(),
+            'walker' => new WP_TopBar_Walker(),
         ) );
         ?>
     </section>
