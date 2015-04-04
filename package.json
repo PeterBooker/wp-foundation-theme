@@ -2,7 +2,7 @@
     "name": "wp-foundation-theme",
     "title": "WP Foundation Theme",
     "description": "A base WordPress Theme for creating completely custom themes, built using Underscores (_s) and Foundation 5. Grunt and Bower are used for maintaining components and preparing assets.",
-    "version": "0.1.0",
+    "version": "0.1.4",
     "homepage": "http://www.domain.com/",
     "author": {
         "name": "Author Name",
