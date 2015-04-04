@@ -206,6 +206,15 @@ function foundation_foundationjs_init() {
 }
 add_action( 'wp_footer', 'foundation_foundationjs_init', 20 );
 
+/**
+ * Customize the Editor Styling
+ */
+function foundation_add_editor_styles() {
+
+	add_editor_style( FOUNDATION_URL . '/assets/css/editor.css?v=' . FOUNDATION_VERSION );
+
+}
+add_action( 'admin_init', 'foundation_add_editor_styles' );
 
 /**
  * Customize the Login Page Link
@@ -226,6 +235,17 @@ function foundation_login_title() {
 
 }
 add_filter( 'login_headertitle', 'foundation_login_title' );
+
+/**
+ * Customize the Login Page Styling
+ */
+function foundation_login_style() {
+
+	// Add our custom styles.
+	wp_enqueue_style( 'foundation-login', FOUNDATION_URL . '/assets/css/login.css', array(), FOUNDATION_VERSION );
+
+}
+add_action( 'login_enqueue_scripts', 'foundation_login_style', 50 );
 
 /**
  * Redirect Logouts to Home Page
