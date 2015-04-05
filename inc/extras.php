@@ -14,8 +14,10 @@
  * @return array
  */
 function foundation_page_menu_args( $args ) {
+
 	$args['show_home'] = true;
 	return $args;
+
 }
 add_filter( 'wp_page_menu_args', 'foundation_page_menu_args' );
 
@@ -26,12 +28,14 @@ add_filter( 'wp_page_menu_args', 'foundation_page_menu_args' );
  * @return array
  */
 function foundation_body_classes( $classes ) {
+
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
 
 	return $classes;
+
 }
 add_filter( 'body_class', 'foundation_body_classes' );
 
@@ -43,6 +47,7 @@ add_filter( 'body_class', 'foundation_body_classes' );
  * @return string The filtered title.
  */
 function foundation_wp_title( $title, $sep ) {
+
 	if ( is_feed() ) {
 		return $title;
 	}
@@ -64,6 +69,7 @@ function foundation_wp_title( $title, $sep ) {
 	}
 
 	return $title;
+
 }
 add_filter( 'wp_title', 'foundation_wp_title', 10, 2 );
 
@@ -80,10 +86,22 @@ add_filter( 'wp_title', 'foundation_wp_title', 10, 2 );
  * @return void
  */
 function foundation_setup_author() {
+
 	global $wp_query;
 
 	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
+
 }
 add_action( 'wp', 'foundation_setup_author' );
+
+/**
+ * Custom Excerpt More Tag
+ */
+function foundation_excerpt_more() {
+
+    return '&hellip;';
+
+}
+add_filter( 'excerpt_more', 'foundation_excerpt_more' );
