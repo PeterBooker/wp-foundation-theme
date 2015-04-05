@@ -5,9 +5,13 @@
  * @package WP Foundation Theme
  */
 
-define( 'FOUNDATION_VERSION', '0.1.4' );
+$theme = wp_get_theme();
+
+define( 'FOUNDATION_VERSION', $theme->get( 'Version' ) );
 define( 'FOUNDATION_URL', get_template_directory_uri() );
 define( 'FOUNDATION_PATH', get_template_directory() );
+
+unset( $theme );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
