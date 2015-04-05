@@ -12,7 +12,8 @@ article.page {
     }
 }
 
-article.post {
+article.type-post,
+article.type-attachment {
 
     padding: em-calc( 20 ) 0;
 
