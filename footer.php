@@ -21,7 +21,7 @@
 
                 <li>
                     <h2>Title #2</h2>
-                    <ul class="side-nav">
+                    <ul>
                         <li><a href="#">Link #1</a></li>
                         <li><a href="#">Link #2</a></li>
                         <li><a href="#">Link #3</a></li>
@@ -34,7 +34,7 @@
                     <?php
                     wp_nav_menu( array(
                         'container' => false,
-                        'menu_class' => 'side-nav',
+                        'menu_class' => 'footer-menu',
                         'theme_location' => 'footer-menu',
                     ) );
                     ?>
@@ -42,7 +42,7 @@
 
                 <li>
                     <h2>Title #4</h2>
-                    <ul class="side-nav">
+                    <ul>
                         <li><a href="#">Link #1</a></li>
                         <li><a href="#">Link #2</a></li>
                         <li><a href="#">Link #3</a></li>
