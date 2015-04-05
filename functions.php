@@ -191,6 +191,38 @@ require get_template_directory() . '/inc/gallery.php';
 require get_template_directory() . '/inc/menu-walkers.php';
 
 /**
+ * Cleanup the WP Head.
+ */
+function foundation_head_cleanup() {
+
+    // Category Feeds
+    // remove_action( 'wp_head', 'feed_links_extra', 3 );
+
+    // Post and Comment Feeds
+    // remove_action( 'wp_head', 'feed_links', 2 );
+
+    // EditURI Link
+    remove_action( 'wp_head', 'rsd_link' );
+
+    // Windows Live Writer
+    remove_action( 'wp_head', 'wlwmanifest_link' );
+
+    // previous link
+    remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+
+    // start link
+    remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+
+    // Next post links
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+
+    // WP Version
+    remove_action( 'wp_head', 'wp_generator' );
+
+}
+add_action( 'init', 'foundation_head_cleanup' );
+
+/**
  * Initialize the Foundation script on every page.
  */
 function foundation_foundationjs_init() {
@@ -289,13 +321,12 @@ add_filter( 'wp_head', 'foundation_remove_wp_widget_recent_comments_style', 1 );
 
 function foundation_remove_recent_comments_style() {
 
-    global $wp_widget_factory;
+    if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
 
-    if ( isset( $wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ] ) ) {
-
-        remove_action( 'wp_head', array( $wp_widget_factory->widgets[ 'WP_Widget_Recent_Comments' ], 'recent_comments_style' ) );
+        remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
 
     }
+
 }
 add_action( 'wp_head', 'foundation_remove_recent_comments_style', 1 );
 
@@ -339,12 +370,15 @@ function foundation_custom_password_form( $content ) {
 }
 add_filter( 'the_password_form', 'foundation_custom_password_form' );
 
-/**
- * Customize the Video oEmbed Output
+/*
+ * Remove inline size attributes from images
+ * Allows them to be responsive
  */
-function foundation_video_embed_output( $html, $url, $attr ) {
+function foundation_remove_size_attributes( $html ) {
 
-    return "<div class=\"flex-video\">" . $html . "</div>";
+    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+    return $html;
 
 }
-add_filter( 'embed_oembed_html', 'foundation_video_embed_output', 10, 3 );
+add_filter( 'post_thumbnail_html', 'foundation_remove_size_attributes', 10 );
+add_filter( 'image_send_to_editor', 'foundation_remove_size_attributes', 10 );
