@@ -3,14 +3,14 @@
 --------------------------------------------------------------*/
 
 // We use these as default colors throughout
-$primary-color: #FC5A20; // #008CBA
+   $primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-$base-color: #343740;
+$base-color: #2e3037;
 $dark-base-color: darken( $base-color, 4% );
 $light-base-color: lighten( $base-color, 10% );
 
