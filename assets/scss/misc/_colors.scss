@@ -10,9 +10,9 @@ $primary-color: #FC5A20; // #008CBA
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-$grey: #343740;
-$dark-grey: darken( $grey, 4% );
-$light-grey: lighten( $grey, 10% );
+$base-color: #343740;
+$dark-base-color: darken( $base-color, 4% );
+$light-base-color: lighten( $base-color, 10% );
 
 /*--------------------------------------------------------------
 2.0 Content Colours

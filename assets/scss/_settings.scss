@@ -487,9 +487,9 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-clearing-classes: $include-html-classes;
 
 // We use these to set the background colors for parts of Clearing.
-   $clearing-bg: $grey; // $oil
+   $clearing-bg: $base-color; // $oil
 // $clearing-caption-bg: $clearing-bg;
-   $clearing-carousel-bg: $dark-grey; // rgba(51,51,51,0.8)
+   $clearing-carousel-bg: $dark-base-color; // rgba(51,51,51,0.8)
 // $clearing-img-bg: $clearing-bg;
 
 // We use these to style the close button
@@ -1382,7 +1382,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-   $topbar-bg-color: $dark-grey; // $oil
+   $topbar-bg-color: $dark-base-color; // $oil
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1402,10 +1402,10 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-   $topbar-link-bg-hover: darken( $dark-grey, 5% ); // $oil
-   $topbar-link-bg-color-hover: $dark-grey; // $charcoal
-   $topbar-link-bg-active: darken( $dark-grey, 5% ); // $primary-color
-   $topbar-link-bg-active-hover: darken( $dark-grey, 5% ); // scale-color($primary-color, $lightness: -14%);
+   $topbar-link-bg-hover: darken( $dark-base-color, 5% ); // $oil
+   $topbar-link-bg-color-hover: $dark-base-color; // $charcoal
+   $topbar-link-bg-active: darken( $dark-base-color, 5% ); // $primary-color
+   $topbar-link-bg-active-hover: darken( $dark-base-color, 5% ); // scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: ($topbar-height / 3);
@@ -1415,11 +1415,11 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-   $topbar-dropdown-bg: darken( $dark-grey, 5% ); // $oil
+   $topbar-dropdown-bg: darken( $dark-base-color, 5% ); // $oil
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
-   $topbar-dropdown-link-bg: $dark-grey; // $oil
-   $topbar-dropdown-link-bg-hover: darken( $dark-grey, 5% );
+   $topbar-dropdown-link-bg: $dark-base-color; // $oil
+   $topbar-dropdown-link-bg-hover: darken( $dark-base-color, 5% );
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
@@ -1429,7 +1429,7 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: $font-weight-bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
-   $topbar-dropdown-label-bg: $dark-grey; // $oil
+   $topbar-dropdown-label-bg: $dark-base-color; // $oil
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
