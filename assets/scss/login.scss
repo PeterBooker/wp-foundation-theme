@@ -9,11 +9,17 @@ body.login {
 
     background: #EFEFEF;
 
-    #login h1 a {
-        background-image: url("../imgs/login-logo.png");
-        background-size: 120px 120px;
-        height: 120px;
-        width: 120px;
+    #login {
+
+        width: auto;
+        max-width: 400px;
+
+        h1 a {
+            background-image: url("../imgs/login-logo.png");
+            background-size: 120px 120px;
+            height: 120px;
+            width: 120px;
+        }
     }
 
     .message {
@@ -48,9 +54,24 @@ body.login {
 
     }
 
-    #backtoblog a:hover,
-    #nav a:hover {
-        color: $primary-color;
+    #backtoblog,
+    #nav {
+
+        width: 50%;
+        margin-top: rem-calc( 24 );
+
+        a:hover {
+            color: $primary-color;
+        }
+
+    }
+
+    #backtoblog {
+        float: left;
+    }
+    #nav {
+        float: right;
+        text-align: right;
     }
 
 }
