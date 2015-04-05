@@ -191,11 +191,6 @@ require get_template_directory() . '/inc/gallery.php';
 require get_template_directory() . '/inc/menu-walkers.php';
 
 /**
- * Custom Foundation Template tags.
- */
-require get_template_directory() . '/inc/foundation-tags.php';
-
-/**
  * Initialize the Foundation script on every page.
  */
 function foundation_foundationjs_init() {
