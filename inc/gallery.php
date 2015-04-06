@@ -32,10 +32,10 @@ function foundation_gallery_output( $output, $attr ) {
         'order' => 'ASC',
         'orderby' => 'menu_order ID',
         'id' => $post->ID,
-        //'itemtag' => 'dl',
-        //'icontag' => 'dt',
-        //'captiontag' => 'dd',
-        'columns' => 3,
+        'itemtag' => 'dl',
+        'icontag' => 'dt',
+        'captiontag' => 'dd',
+        'columns' => 4,
         'size' => 'thumbnail',
         'include' => '',
         'exclude' => '',
@@ -74,13 +74,13 @@ function foundation_gallery_output( $output, $attr ) {
         return $output;
     }
 
-    $columns = intval( $columns ); // Use this??
+    $columns = absint( $columns ); // Use this??
 
     $selector = "gallery-{$instance}";
 
-    $output = "<div id='$selector' class='gallery galleryid-{$id}'>\n";
+    $output = "<div id='$selector' class='gallery galleryid-{$id} text-center'>\n";
 
-    $output .= "<ul class='small-block-grid-2 medium-block-grid-4 large-block-grid-6 clearing-thumbs' data-clearing>\n";
+    $output .= "<ul class='small-block-grid-2 medium-block-grid-2 large-block-grid-" . esc_attr( $columns ) . " clearing-thumbs' data-clearing>\n";
 
     $i = 0;
     foreach ( $attachments as $id => $attachment ) {
