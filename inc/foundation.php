@@ -87,7 +87,28 @@ function foundation_custom_password_form( $content ) {
 }
 add_filter( 'the_password_form', 'foundation_custom_password_form' );
 
-/*
+/**
+ * Add Flex Video Wrapper to Videos
+ *
+ * Thanks to Clorith http://www.clorith.net/blog/responsive-embeds-wordpress/
+ */
+function foundation_responsive_videos_embeds( $content ) {
+
+    $content = preg_replace( "/<object/Si", '<div class="flex-video"><object', $content );
+    $content = preg_replace( "/<\/object>/Si", '</object></div>', $content );
+
+    /**
+     * Added iframe filtering, iframes are bad.
+     */
+    $content = preg_replace( "/<iframe.+?src=\"(.+?)\"/Si", '<div class="flex-video"><iframe src="\1" frameborder="0" allowfullscreen>', $content );
+    $content = preg_replace( "/<\/iframe>/Si", '</iframe></div>', $content );
+
+    return $content;
+
+}
+//add_filter( 'the_content', 'foundation_responsive_videos_embeds' );
+
+/**
  * Remove inline size attributes from images
  * Allows them to be responsive
  */
