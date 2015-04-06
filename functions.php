@@ -155,7 +155,7 @@ function foundation_register_files() {
 
     wp_register_script( 'zurb-foundation', FOUNDATION_URL . '/assets/js/src/foundation.min.js', array( 'jquery' ), FOUNDATION_VERSION, true );
 
-    wp_register_script( 'modernizr', FOUNDATION_URL . '/assets/js/src/modernizr.js', array(), FOUNDATION_VERSION, true );
+    wp_register_script( 'modernizr', FOUNDATION_URL . '/assets/js/src/modernizr.js', array(), FOUNDATION_VERSION, false );
 
     wp_register_script( 'foundation-customizer', FOUNDATION_URL . '/assets/js/src/customizer.js', array( 'customize-preview' ), FOUNDATION_VERSION, true );
 
@@ -179,7 +179,9 @@ function foundation_enqueue_files() {
 
         wp_enqueue_script( 'modernizr' );
 
-        wp_enqueue_script( 'zurb-foundation' );
+        wp_enqueue_script( 'kebo-combined' );
+
+        //wp_enqueue_script( 'zurb-foundation' );
 
         //wp_enqueue_script( 'foundation-navigation' );
 
