@@ -1343,7 +1343,7 @@ $include-html-global-classes: $include-html-classes;
 // $thumb-border-width: 4px;
 // $thumb-border-color: $white;
 // $thumb-box-shadow: 0 0 0 1px rgba($black,.2);
-// $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
+   $thumb-box-shadow-hover: 0 0 4px 1px rgba( $oil, 0.5 ); // 0 0 6px 1px rgba($primary-color,0.5);
 
 // Radius and transition speed for thumbs
 // $thumb-radius: $global-radius;
