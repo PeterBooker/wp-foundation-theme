@@ -100,6 +100,16 @@ function foundation_setup() {
     require get_template_directory() . '/inc/gallery.php';
 
     /**
+     * Custom Foundation Walkers.
+     */
+    require get_template_directory() . '/inc/menu-walkers.php';
+
+    /**
+     * Custom Foundation Specific Changes.
+     */
+    require get_template_directory() . '/inc/foundation.php';
+
+    /**
      * Customizer additions.
      */
     //require get_template_directory() . '/inc/customizer.php';
@@ -108,11 +118,6 @@ function foundation_setup() {
      * Load Jetpack compatibility file.
      */
     //require get_template_directory() . '/inc/jetpack.php';
-
-    /**
-     * Custom Foundation Walkers.
-     */
-    require get_template_directory() . '/inc/menu-walkers.php';
 
 }
 endif; // foundation_setup
