@@ -2,17 +2,20 @@
 1.0 Posts
 --------------------------------------------------------------*/
 
-article.post,
-article.page {
+article.type-post,
+article.type-page {
+
     position: relative;
 
     .edit-link i {
         margin-right: rem-calc( 6 );
         color: $monsoon;
     }
+
 }
 
 article.type-post,
+article.type-page,
 article.type-attachment {
 
     padding: em-calc( 20 ) 0;
