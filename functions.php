@@ -175,6 +175,8 @@ function foundation_enqueue_files() {
 
     if ( ! is_admin() ) {
 
+        // Front End
+
         wp_enqueue_style( 'foundation-style', get_stylesheet_uri(), array(), FOUNDATION_VERSION );
 
         wp_enqueue_script( 'modernizr' );
@@ -195,12 +197,34 @@ function foundation_enqueue_files() {
 
     } else {
 
-
+        // Back End
 
     }
 
 }
 add_action( 'wp_enqueue_scripts', 'foundation_enqueue_files' );
+add_action( 'admin_enqueue_scripts', 'foundation_enqueue_files' );
+
+/**
+ * Dequeue scripts and styles.
+ */
+function foundation_deregister_files() {
+
+    if ( ! is_admin() ) {
+
+        // Front End
+
+        wp_deregister_style('mediaelement');
+        wp_deregister_style('wp-mediaelement');
+
+    } else {
+
+        // Back End
+
+    }
+
+}
+add_action( 'wp_enqueue_scripts', 'foundation_deregister_files' );
 add_action( 'admin_enqueue_scripts', 'foundation_enqueue_files' );
 
 /**
