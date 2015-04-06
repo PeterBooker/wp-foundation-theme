@@ -248,6 +248,14 @@ function foundation_add_editor_styles() {
 }
 add_action( 'admin_init', 'foundation_add_editor_styles' );
 
+/*
+ * Prevent Automatic Compression of JPEG Images
+ */
+function foundation_jpeg_quality_filter() {
+    return 100;
+}
+//add_filter( 'jpeg_quality', 'foundation_jpeg_quality_filter' );
+
 /**
  * Customize the Login Page Link
  */
