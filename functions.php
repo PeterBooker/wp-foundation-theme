@@ -163,7 +163,7 @@ function foundation_register_files() {
 
     wp_register_script( 'foundation-navigation', FOUNDATION_URL . '/assets/js/src/navigation.js', array(), FOUNDATION_VERSION, true );
 
-    wp_register_script( 'foundation-combined', FOUNDATION_URL . '/assets/js/scripts.min.js', array(), FOUNDATION_VERSION, true );
+    wp_register_script( 'foundation-combined', FOUNDATION_URL . '/assets/js/scripts.min.js', array( 'jquery' ), FOUNDATION_VERSION, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'foundation_register_files' );
