@@ -2,6 +2,10 @@
 1.0 Posts
 --------------------------------------------------------------*/
 
+.page-header {
+    margin-bottom: rem-calc( 20 );
+}
+
 article.type-post,
 article.type-page {
 
@@ -42,7 +46,7 @@ article.type-attachment {
 
     .entry-header {
 
-        margin-bottom: em-calc( 20 );
+        margin-bottom: rem-calc( 20 );
 
         .entry-title {
             margin: 0;
