@@ -87,42 +87,42 @@ function foundation_setup() {
     /**
      * Custom template tags for this theme.
      */
-    require KEBO_PATH . '/inc/template-tags.php';
+    require FOUNDATION_PATH . '/inc/template-tags.php';
 
     /**
      * Custom functions that act independently of the theme templates.
      */
-    require KEBO_PATH . '/inc/extras.php';
+    require FOUNDATION_PATH . '/inc/extras.php';
 
     /**
      * Overwrite the Gallery Output - Foundation Clearing
      */
-    require KEBO_PATH . '/inc/gallery.php';
+    require FOUNDATION_PATH . '/inc/gallery.php';
 
     /**
      * Custom Foundation Walkers.
      */
-    require KEBO_PATH . '/inc/menu-walkers.php';
+    require FOUNDATION_PATH . '/inc/menu-walkers.php';
 
     /**
      * Custom Foundation Specific Changes.
      */
-    require KEBO_PATH . '/inc/foundation.php';
+    require FOUNDATION_PATH . '/inc/foundation.php';
 
     /**
      * Custom Login Page.
      */
-    require KEBO_PATH . '/inc/custom-login.php';
+    require FOUNDATION_PATH . '/inc/custom-login.php';
 
     /**
      * Customizer additions.
      */
-    //require KEBO_PATH . '/inc/customizer.php';
+    //require FOUNDATION_PATH . '/inc/customizer.php';
 
     /**
      * Load Jetpack compatibility file.
      */
-    //require KEBO_PATH . '/inc/jetpack.php';
+    //require FOUNDATION_PATH . '/inc/jetpack.php';
 
 }
 endif; // foundation_setup
