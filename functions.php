@@ -110,6 +110,11 @@ function foundation_setup() {
     require get_template_directory() . '/inc/foundation.php';
 
     /**
+     * Custom Login Page.
+     */
+    require get_template_directory() . '/inc/custom-login.php';
+
+    /**
      * Customizer additions.
      */
     //require get_template_directory() . '/inc/customizer.php';
@@ -229,22 +234,6 @@ function foundation_head_cleanup() {
 add_action( 'init', 'foundation_head_cleanup' );
 
 /**
- * Initialize the Foundation script on every page.
- */
-function foundation_foundationjs_init() {
-
-    ?>
-    <script type="text/javascript">
-        jQuery( document ).ready(function( $ ) {
-            $(document).foundation();
-        });
-    </script>
-    <?php
-
-}
-add_action( 'wp_footer', 'foundation_foundationjs_init', 20 );
-
-/**
  * Customize the Editor Styling
  */
 function foundation_add_editor_styles() {
@@ -261,138 +250,3 @@ function foundation_jpeg_quality_filter() {
     return 100;
 }
 //add_filter( 'jpeg_quality', 'foundation_jpeg_quality_filter' );
-
-/**
- * Customize the Login Page Link
- */
-function foundation_login_url() {
-
-    return home_url();
-
-}
-add_filter( 'login_headerurl', 'foundation_login_url' );
-
-/**
- * Customize the Login Page Title
- */
-function foundation_login_title() {
-
-    return get_option( 'blogname' );
-
-}
-add_filter( 'login_headertitle', 'foundation_login_title' );
-
-/**
- * Customize the Login Page Styling
- */
-function foundation_login_style() {
-
-	// Add our custom styles.
-	wp_enqueue_style( 'foundation-login', FOUNDATION_URL . '/assets/css/login.css', array(), FOUNDATION_VERSION );
-
-}
-add_action( 'login_enqueue_scripts', 'foundation_login_style', 50 );
-
-/**
- * Redirect Logouts to Home Page
- */
-function foundation_logout_redirect( $logouturl, $redir ) {
-
-    $redir = get_bloginfo('url');
-    return $logouturl . '&redirect_to=' . urlencode( $redir );
-
-}
-add_filter( 'logout_url', 'foundation_logout_redirect', 10, 2 );
-
-/**
- * Remove the default Admin Bar offset, custom CSS manually adds this.
- */
-function foundation_default_admin_bar_fix() {
-
-    if( ! is_admin() && is_admin_bar_showing() ) {
-
-        remove_action( 'wp_head', '_admin_bar_bump_cb' );
-
-    }
-
-}
-add_action( 'wp_head', 'foundation_default_admin_bar_fix', 5 );
-
-/**
- * Remove injected CSS from recent comments widget
- */
-
-function foundation_remove_wp_widget_recent_comments_style() {
-
-    if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
-
-        remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
-
-    }
-
-}
-add_filter( 'wp_head', 'foundation_remove_wp_widget_recent_comments_style', 1 );
-
-function foundation_remove_recent_comments_style() {
-
-    if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
-
-        remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
-
-    }
-
-}
-add_action( 'wp_head', 'foundation_remove_recent_comments_style', 1 );
-
-/**
- * Replace .sticky class with .wp-sticky to avoid Foundation conflicts.
- * Foundation Compatibility
- */
-function foundation_remove_sticky_class( $classes ) {
-
-    $classes = array_diff( $classes, array( 'sticky' ) );
-    $classes[] = 'wp-sticky';
-
-    return $classes;
-
-}
-add_filter( 'post_class', 'foundation_remove_sticky_class' );
-
-/**
- * Customize the Post Password Form
- */
-function foundation_custom_password_form( $content ) {
-
-    global $post;
-    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $password_text = __( 'Password:' );
-
-    $output = "<form action='" . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . "' class='post-password-form' method='post'>";
-    $output .= "<label for='" . $label . "'>$password_text<span class='screen-reader-text'>" . $password_text . "</span></label>";
-    $output .= "<div class='row collapse'>";
-    $output .= "<div class='small-8 medium-8 large-8 columns'>";
-    $output .= "<input name='post_password' id='" . $label . "' type='password'>";
-    $output .= "</div>";
-    $output .= "<div class='small-4 medium-4 large-4 columns'>";
-    $output .= "<input type='submit' class='button postfix' name='Submit' value='" . esc_attr__( 'Submit' ) . "' />";
-    $output .= "</div>";
-    $output .= "</div>";
-    $output .= "</form>";
-
-    return $output;
-
-}
-add_filter( 'the_password_form', 'foundation_custom_password_form' );
-
-/*
- * Remove inline size attributes from images
- * Allows them to be responsive
- */
-function foundation_remove_size_attributes( $html ) {
-
-    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
-    return $html;
-
-}
-add_filter( 'post_thumbnail_html', 'foundation_remove_size_attributes', 10 );
-add_filter( 'image_send_to_editor', 'foundation_remove_size_attributes', 10 );
