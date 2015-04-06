@@ -74,7 +74,10 @@ function foundation_gallery_output( $output, $attr ) {
         return $output;
     }
 
-    $columns = absint( $columns ); // Use this??
+    // Prepare and Validate Column Count
+    $columns = absint( $columns );
+    $total = count( $attachments );
+    $columns = ( $columns > $total ) ? $total : $columns;
 
     $selector = "gallery-{$instance}";
 
