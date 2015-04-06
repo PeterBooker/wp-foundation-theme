@@ -179,7 +179,7 @@ function foundation_enqueue_files() {
 
         wp_enqueue_script( 'modernizr' );
 
-        wp_enqueue_script( 'kebo-combined' );
+        wp_enqueue_script( 'foundation-combined' );
 
         //wp_enqueue_script( 'zurb-foundation' );
 
