@@ -342,6 +342,32 @@ get_header(); ?>
                                 </ul>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <ul class="pricing-table featured">
+                                    <li class="title">Standard</li>
+                                    <li class="price">$129.99</li>
+                                    <li class="description">An awesome description</li>
+                                    <li class="bullet-item">2 Database</li>
+                                    <li class="bullet-item">10GB Storage</li>
+                                    <li class="bullet-item">50 Users</li>
+                                    <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <ul class="pricing-table">
+                                    <li class="title">Standard</li>
+                                    <li class="price">$249.99</li>
+                                    <li class="description">An awesome description</li>
+                                    <li class="bullet-item">10 Database</li>
+                                    <li class="bullet-item">100GB Storage</li>
+                                    <li class="bullet-item">250 Users</li>
+                                    <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+                                </ul>
+                            </div>
+                        </div>
 
                         <hr>
                         <h4 id="progress-bars">Progress Bars</h4>
