@@ -429,8 +429,8 @@ video.wp-video-shortcode {}
   float:       left;
   margin:      0;
   padding:     0;
-  width:       36px;
-  height:      30px;
+  width:       26px;
+  height:      26px;
   border:      none;
   font-size:   11px;
   line-height: 11px;
@@ -443,7 +443,7 @@ video.wp-video-shortcode {}
   position: absolute;
   width:    16px;
   height:   16px;
-  margin:   7px 10px;
+  margin:   7px 5px;
   padding:  0;
   cursor:   pointer;
 
@@ -465,7 +465,7 @@ video.wp-video-shortcode {}
 /* === Play/Pause === */
 
 .mejs-playpause-button {
-  background: $primary-color;
+  //background: $primary-color;
 }
 .mejs-play {} /* Class when playing. */
 .mejs-play {} /* Class when paused. */
