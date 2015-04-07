@@ -168,7 +168,7 @@ if ( ! class_exists( 'WP_TopBar_Walker' ) ) {
             if ( $args['walker'] instanceof WP_Foundation_TopBar ) {
 
                 $args['container'] = false;
-                $args['fallback_cb'] = 'WP_Foundation_TopBar::fallback';
+                $args['fallback_cb'] = 'WP_TopBar_Walker::fallback';
 
             }
 
@@ -208,7 +208,7 @@ if ( ! class_exists( 'WP_TopBar_Walker' ) ) {
 
                 remove_action( 'wp_head', '_admin_bar_bump_cb' );
 
-                $height = WP_Foundation_TopBar::$height;
+                $height = WP_TopBar_Walker::$height;
 
                 $output = '<style type="text/css">' . "\n\t";
                 $output .= 'body.admin-bar #wpadminbar { position: fixed; }' . "\n\t";
@@ -224,15 +224,15 @@ if ( ! class_exists( 'WP_TopBar_Walker' ) ) {
 
     }
     // Force Certain Args for Compatibility
-    add_filter( 'wp_nav_menu_args', array( 'WP_Foundation_TopBar', 'menu_args' ) );
+    add_filter( 'wp_nav_menu_args', array( 'WP_TopBar_Walker', 'menu_args' ) );
 
 
     /*
      * Uncomment the relevant fix depending on your TopBar use, or add the CSS to your theme manually.
      */
     // Sticky TopBar + WP Admin Bar Fix
-    //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'sticky_fix' ), 5, 0 );
+    //add_action( 'wp_head', array( 'WP_TopBar_Walker', 'sticky_fix' ), 5, 0 );
     // Fixed TopBar + WP Admin Bar Fix
-    //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'fixed_fix' ), 5, 0 );
+    //add_action( 'wp_head', array( 'WP_TopBar_Walker', 'fixed_fix' ), 5, 0 );
 
 }
