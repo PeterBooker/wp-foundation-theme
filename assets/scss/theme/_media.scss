@@ -2,37 +2,14 @@
 1.0 Media Styling
 --------------------------------------------------------------*/
 
+// Common Values
+$mejs-control-opacity: 0.8;
+$mejs-primary-color: $primary-color;
+$mejs-base-color: $base-color;
 
 /*--------------------------------------------------------------
 2.0 Media Element Player - Based on Justin Tadlock's https://github.com/justintadlock/theme-mediaelement
 --------------------------------------------------------------*/
-
-.wp-playlist {
-
-    //margin-bottom: rem-calc( 20 );
-    //border: 1px solid $gainsboro;
-
-}
-
-div.mejs-container {
-
-    //margin-bottom: rem-calc( 20 );
-
-    .mejs-controls {
-        //background: $base-color;
-    }
-
-    &.mejs-audio {
-
-    }
-
-    &.mejs-video {
-        .mejs-mediaelement {
-            //@include flex-video-container();
-        }
-    }
-
-}
 
 /**
  * 01: Structure - Layout of the major structural elements.
@@ -97,7 +74,7 @@ div.mejs-container {
   left:     0;
   width:    100%;
   height:   100%;
-  background: darken( $dark-base-color, 6% );
+  background: darken( $mejs-base-color, 12% );
 }
 
 /* Audio and video elements */
@@ -411,124 +388,141 @@ video.wp-video-shortcode {}
  * --------------------------------------------------------------------------- */
 
 .mejs-controls {
-  position:        absolute;
-  list-style-type: none;
-  margin:          0;
-  padding:         0;
-  bottom:          0;
-  left:            0;
-  width:           100%;
-  height:          30px;
-  background:      $base-color;
+    position:        absolute;
+    list-style-type: none;
+    margin:          0;
+    padding:         0;
+    bottom:          0;
+    left:            0;
+    width:           100%;
+    height:          32px;
+    background-color: $mejs-base-color;
 }
+.mejs-video .mejs-controls {
+  opacity: 0;
+  transition: opacity 0.3s linear;
+  background-color: transparent;
+}
+.mejs-video:hover .mejs-controls {
+  opacity:1;
+}
+
 
 /* Individual control sections. */
 .mejs-controls > div,
 .mejs-controls > a {
-  display:     block;
-  float:       left;
-  margin:      0;
-  padding:     0;
-  width:       26px;
-  height:      26px;
-  border:      none;
-  font-size:   11px;
-  line-height: 11px;
+    display:     block;
+    float:       left;
+    margin:      0;
+    padding:     0;
+    width:       46px;
+    height:      32px;
+    border:      none;
+    font-size:   11px;
+    line-height: 11px;
 }
 
 /* Individual buttons. */
 .mejs-button button {
-  font-family: FontAwesome;
-  display:  block;
-  position: absolute;
-  width:    16px;
-  height:   16px;
-  margin:   7px 5px;
-  padding:  0;
-  cursor:   pointer;
+    font-family: FontAwesome;
+    display:  block;
+    position: absolute;
+    width:    16px;
+    height:   16px;
+    margin:   7px 10px;
+    padding:  0;
+    cursor:   pointer;
 
-  border:          none;
-  font-size:       16px;
-  line-height:     0;
-  text-decoration: none;
-
-  /*background: transparent url( 'images/controls.png' ) no-repeat;*/
+    border:          none;
+    font-size:       16px;
+    line-height:     0;
+    text-decoration: none;
 }
 
 .no-svg .mejs-button button {
 }
 
 .mejs-button button:focus {
-  outline: solid 1px yellow;
+    outline: solid 1px yellow;
 }
 
 /* === Play/Pause === */
 
-.mejs-playpause-button {
-  //background: $primary-color;
+.mejs-button.mejs-playpause-button {
+    position: relative;
+    background: $mejs-primary-color; /* The Fallback */
+    background: rgba( $mejs-primary-color, $mejs-control-opacity );
+    margin-right: 5px;
 }
 .mejs-play {} /* Class when playing. */
 .mejs-play {} /* Class when paused. */
 .mejs-stop {} /* Stop button. */
 
 .mejs-playpause-button button {
-  background-color: transparent;
+    background-color: transparent;
+    margin: 0;
+    padding: 7px 10px;
+    width: 100%;
+    height: 100%;
 }
 
 .mejs-play button {
+
 }
 .mejs-play button:before {
-  content: '\f04b';
-  color: #fff;
-  font-size: 16px;
-  float: left;
-  margin-left: 2px;
+    content: '\f04b';
+    color: #fff;
+    font-size: 16px;
 }
 
 .mejs-pause button {
+
 }
 .mejs-pause button:before {
-  content: '\f04c';
-  color: #fff;
-  font-size: 16px;
-  float: left;
-  margin-left: 2px;
+    content: '\f04c';
+    color: #fff;
+    font-size: 16px;
 }
 
 .mejs-stop button {
-  background-color: transparent;
+    background-color: transparent;
 }
 .mejs-stop button:before {
-  content: '\f04d';
-  color: #fff;
-  font-size: 16px;
-  float: left;
-  margin-left: 2px;
+    content: '\f04d';
+    color: #fff;
+    font-size: 16px;
+    float: left;
+    margin-left: 2px;
 }
 
 /* === Media Time (current time) === */
 
 .mejs-controls .mejs-time {
-  overflow:   hidden;
-  display:    block;
-  width:      auto;
-  height:     17px;
-  padding:    8px 3px 0;
-  color:      #fff;
-  text-align: center;
+    overflow:   hidden;
+    display:    block;
+    width:      0;
+    height:     17px;
+    padding:    8px 0 0;
+    color:      #fff;
+    text-align: center;
+    position: relative;
 
-  -moz-box-sizing:    content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+    -moz-box-sizing:    content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 /* Individual elements within the time wrapper. */
 .mejs-time span {
-  display: block;
-  float:   left;
-  width:   auto;
-  margin:  2px 2px 0 0;
-  color:   #fff;
+    display: block;
+    float:   left;
+    width:   auto;
+    margin:  2px 2px 0 0;
+    color:   #fff;
+    position: relative;
+    top: 0;
+    left: 20px;
+    z-index: 9999;
 }
 
 .mejs-time .mejs-currenttime {}
@@ -537,9 +531,11 @@ video.wp-video-shortcode {}
 /* Wrapper div for the time rail. */
 
 .mejs-controls .mejs-time-rail {
-  direction: ltr;
-  width:     200px;
-  padding:   5px 5px 0;
+    direction: ltr;
+    width:     200px;
+    padding:   0px 4px 0;
+    background-color: $mejs-primary-color;
+    background-color: rgba( $mejs-primary-color, $mejs-control-opacity );
 }
 
 /* Wrapper for the time rail elements. */
@@ -549,17 +545,17 @@ video.wp-video-shortcode {}
 /* Individual elements within the time rail */
 .mejs-time-rail span,
 .mejs-time-rail > a {
-  display:  block;
-  position: absolute;
-  height:   10px;
-  cursor:   pointer;
+    display:  block;
+    position: absolute;
+    height:   24px;
+    cursor:   pointer;
 }
 
 /* Total time. */
 .mejs-time-rail .mejs-time-total {
-  position:   relative;
-  margin:     5px 0;
-  background: darken( $dark-base-color, 6% );
+    position:   relative;
+    margin: 4px 0;
+    background-color: rgba( scale-color( $mejs-primary-color, $lightness: -40% ), $mejs-control-opacity );
 }
 
 /* Buffering */
@@ -572,13 +568,13 @@ video.wp-video-shortcode {}
   background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image:        linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   /* === */
 
   -webkit-background-size: 15px 15px;
   -moz-background-size:    15px 15px;
-  -o-background-size:        15px 15px;
-  background-size:                15px 15px;
+  -o-background-size:      15px 15px;
+  background-size:         15px 15px;
 
   -webkit-animation: buffering-stripes 2s linear infinite;
   -moz-animation:    buffering-stripes 2s linear infinite;
@@ -612,24 +608,48 @@ video.wp-video-shortcode {}
 /* Time loaded */
 .mejs-time-rail .mejs-time-loaded {
   width:      0;       /* Don't overwrite. Mediaelement will adjust the width. */
-  background: $light-base-color;
+  background-color: rgba( scale-color( $mejs-primary-color, $lightness: 30% ), $mejs-control-opacity );
 }
 
 /* Current time. */
 .mejs-time-rail .mejs-time-current {
-  width:      0;       /* Don't overwrite. Mediaelement will adjust the width. */
-  background: $primary-color;
+
+    width: 0; /* Don't overwrite. Mediaelement will adjust the width. */
+
+    margin: -4px -4px;
+    height: 32px;
+    border: 4px solid rgba( #fff, 0.3 );
+    border-right: none;
+    background-color: rgba( #fff, 0.1 );
+
+    /* Theme authors: Overwrite just this portion for custom colors. */
+    background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    /* === */
+
+    -webkit-background-size: 15px 15px;
+    -moz-background-size:    15px 15px;
+    -o-background-size:      15px 15px;
+    background-size:         15px 15px;
+
 }
 
 /* Handle for adjusting current time. */
 .mejs-time-rail .mejs-time-handle {
-  display:    none;
-  position:   absolute;
-  top:        -2px;
-  width:      10px;
-  margin:     0;
-  background: #fff;
-  cursor:     pointer;
+  //display:    none;
+  position: absolute;
+  top: 0;
+  margin-top: -4px;
+  margin-left: -4px;
+  width: 5px;
+  height: 32px;
+  background-color: #fff;
+  background-color: rgba( #fff, 0.7 );
+  cursor: pointer;
   text-align: center;
 }
 
@@ -641,9 +661,8 @@ video.wp-video-shortcode {}
   width:       36px;
   height:      17px;
   margin-left: -18px;
-  color:       #111;
-  background:  #eee;
-  border:      solid 1px #333;
+  color:       #fff;
+  background-color:  $mejs-primary-color;
   text-align:  center;
 }
 
@@ -656,39 +675,48 @@ video.wp-video-shortcode {}
   display:    block;
   left:       0;
   margin:     2px;
-  width:      30px;
+  width:      32px;
   text-align: center;
 }
 
 .mejs-long-video .mejs-time-rail .mejs-time-float-current {
-  width: 44px;
+    width: 44px;
 }
 
 /* Pointer at the botton of the time float. */
 .mejs-time-rail .mejs-time-float-corner {
-  display:      block;
-  position:     absolute;
-  top:          15px;
-  left:         13px;
-  width:        0;
-  height:       0;
-  line-height:  0;
-  border:       solid 5px #eee;
-  border-color: #eee transparent transparent transparent;
+    display:      block;
+    position:     absolute;
+    top:          15px;
+    left:         13px;
+    width:        0;
+    height:       0;
+    line-height:  0;
+    border:       solid 5px $mejs-primary-color;
+    border-color: $mejs-primary-color transparent transparent transparent;
 
-  -webkit-border-radius: 0;
-  -moz-border-radius:    0;
-  border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius:    0;
+    border-radius: 0;
 }
 
 .mejs-long-video .mejs-time-rail .mejs-time-float-corner {
-  left: 18px;
+    left: 18px;
 }
 
 /* === Fullscreen === */
 
 /* Fullscreen button */
+.mejs-button.mejs-fullscreen-button {
+  position: relative;
+  background-color: $mejs-primary-color;
+  margin-left: 5px;
+}
 .mejs-fullscreen-button button {
+    padding: 7px 10px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
     background-color: transparent;
 }
 .mejs-fullscreen-button button:before {
@@ -705,7 +733,9 @@ video.wp-video-shortcode {}
 
 /* Volume button */
 .mejs-controls .mejs-volume-button {
-  position: relative;
+    position: relative;
+    background-color: $mejs-primary-color;
+    margin-left: 5px;
 }
 .mejs-mute {}
 .mejs-unmute {}
@@ -713,10 +743,13 @@ video.wp-video-shortcode {}
 .mejs-volume-button:hover {}
 
 .mejs-volume-button button {
-  background-color: transparent;
-  font-size: 16px;
-  float: left;
-  margin-left: 2px;
+    background-color: transparent;
+    font-size: 16px;
+    float: left;
+    padding: 7px 10px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .mejs-volume-button .mejs-mute button {
@@ -739,7 +772,7 @@ video.wp-video-shortcode {}
   display:    none;
   position:   absolute;
   top:        -115px;
-  left:       0;
+  left:       3px;
   width:      25px;
   height:     115px;
   margin:     0;
@@ -766,7 +799,7 @@ video.wp-video-shortcode {}
   width:      2px;
   height:     100px;
   margin:     0;
-  background: $primary-color;
+  background: $mejs-primary-color;
 }
 
 /* Volume slider handle */
@@ -787,15 +820,16 @@ video.wp-video-shortcode {}
   width:    60px;
   position: relative;
   display:  table;
+  margin-left: 5px;
 }
 
 /* Volume total. */
 .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
   position:   absolute;
-  top:        11px;
+  top:        9px;
   left:       0;
-  width:      50px;
-  height:     8px;
+  width:      55px;
+  height:     12px;
   margin:     0;
   padding:    0;
   font-size:  1px;
@@ -805,14 +839,14 @@ video.wp-video-shortcode {}
 /* Volume current. */
 .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
   position:   absolute;
-  top:        11px;
+  top:        9px;
   left:       0;
   width:      50px;
-  height:     8px;
+  height:     12px;
   margin:     0;
   padding:    0;
   font-size:  1px;
-  background: $primary-color;
+  background: $mejs-primary-color;
 }
 
 /* Volume handle. */
@@ -826,11 +860,11 @@ video.wp-video-shortcode {}
 .mejs-controls .mejs-loop-on {}
 
 .mejs-loop-off button {
-  background-position: -64px -16px;
+
 }
 
 .mejs-loop-on button {
-  background-position: -64px 0;
+
 }
 
 /* === Backlight button === */
@@ -839,16 +873,16 @@ video.wp-video-shortcode {}
 .mejs-controls .mejs-backlight-on {}
 
 .mejs-backlight-off button {
-  background-position: -80px -16px;
+
 }
 .mejs-backlight-on button {
-  background-position: -80px 0;
+
 }
 
 /* === Picture controls button === */
 
 .mejs-controls .mejs-picturecontrols-button {
-  background-position: -96px 0;
+
 }
 
 /* === Captions (note that WP core doesn't support these as of 3.6). === */
@@ -861,7 +895,7 @@ video.wp-video-shortcode {}
 }
 
 .mejs-captions-button button {
-  background-position: -48px 0;
+
 }
 
 .mejs-captions-button .mejs-captions-selector {
