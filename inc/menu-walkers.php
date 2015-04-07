@@ -9,9 +9,9 @@
  * Custom Menu Walker for Foundation's Top Bar menu.
  * Foundation Docs - http://foundation.zurb.com/docs/components/topbar.html
  */
-if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
+if ( ! class_exists( 'WP_TopBar_Walker' ) ) {
 
-    class WP_Foundation_TopBar extends Walker_Nav_Menu {
+    class WP_TopBar_Walker extends Walker_Nav_Menu {
 
         /*
          * Default height of Foundation TopBar
