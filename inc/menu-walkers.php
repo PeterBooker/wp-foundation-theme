@@ -165,7 +165,7 @@ if ( ! class_exists( 'WP_TopBar_Walker' ) ) {
          */
         public static function menu_args( $args ) {
 
-            if ( $args['walker'] instanceof WP_Foundation_TopBar ) {
+            if ( $args['walker'] instanceof WP_TopBar_Walker ) {
 
                 $args['container'] = false;
                 $args['fallback_cb'] = 'WP_TopBar_Walker::fallback';
