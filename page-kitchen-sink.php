@@ -341,8 +341,6 @@ get_header(); ?>
                                     <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="large-4 columns">
                                 <ul class="pricing-table featured">
                                     <li class="title">Standard</li>
@@ -354,8 +352,6 @@ get_header(); ?>
                                     <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="large-4 columns">
                                 <ul class="pricing-table">
                                     <li class="title">Standard</li>
