@@ -40,9 +40,10 @@
 
         .recentcomments {
 
-            overflow: hidden;
+            //overflow: hidden;
 
             a {
+                display: block;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
