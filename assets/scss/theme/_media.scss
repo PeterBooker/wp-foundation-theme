@@ -740,8 +740,7 @@ video.wp-video-shortcode {}
     position: relative;
     background: $mejs-primary-color; /* The Fallback */
     background: rgba( $mejs-primary-color, $mejs-control-opacity );
-    margin-left: 4px;
-    float: right;
+    margin-left: 5px;
     display:  table;
 }
 .mejs-mute {}
@@ -1157,3 +1156,10 @@ video.wp-video-shortcode {}
 
 .ltr .wp-playlist-item .wp-playlist-item-length { float: right; }
 .rtl .wp-playlist-item .wp-playlist-item-length { float: left;  }
+
+.mejs-container .mejs-controls > div:last-of-type {
+  position: relative;
+  clear: both;
+  float: right;
+  top:   -31px;
+}
