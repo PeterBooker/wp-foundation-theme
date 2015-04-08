@@ -43,10 +43,11 @@
             //overflow: hidden;
 
             a {
-                display: block;
+                display: inline-block;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
+                width: auto;
             }
         }
 
