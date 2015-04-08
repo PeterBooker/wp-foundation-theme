@@ -76,6 +76,9 @@ $mejs-base-color: $base-color;
   height:   100%;
   background: darken( $mejs-base-color, 12% );
 }
+.mejs-audio .mejs-mediaelement {
+  background: transparent;
+}
 
 /* Audio and video elements */
 .mejs-mediaelement audio {}
@@ -393,7 +396,7 @@ video.wp-video-shortcode {}
     left:            0;
     width:           100%;
     height:          32px;
-    background-color: $mejs-base-color;
+    background-color: transparent;
 }
 .mejs-video .mejs-controls {
   opacity: 0;
