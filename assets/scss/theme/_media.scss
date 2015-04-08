@@ -741,6 +741,7 @@ video.wp-video-shortcode {}
     background: $mejs-primary-color; /* The Fallback */
     background: rgba( $mejs-primary-color, $mejs-control-opacity );
     margin-left: 4px;
+    display:  table;
 }
 .mejs-mute {}
 .mejs-unmute {}
@@ -827,7 +828,7 @@ video.wp-video-shortcode {}
   height:   32px;
   width:    46px;
   display:  table;
-  margin-left: 4px;
+  margin-left: 6px;
   position: absolute;
   top: 0;
   right: 0;
