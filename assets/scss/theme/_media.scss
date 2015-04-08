@@ -498,7 +498,7 @@ video.wp-video-shortcode {}
 /* === Media Time (current time) === */
 
 .mejs-controls .mejs-time {
-    overflow:   hidden;
+    //overflow:   hidden;
     display:    block;
     width:      0;
     height:     17px;
@@ -514,15 +514,23 @@ video.wp-video-shortcode {}
 
 /* Individual elements within the time wrapper. */
 .mejs-time span {
+    position: relative;
     display: block;
     float:   left;
     width:   auto;
     margin:  2px 2px 0 0;
     color:   #fff;
-    position: relative;
+    color:   rgba( 255, 255, 255, 0.9 );
     top: 0;
-    left: 20px;
-    z-index: 9999;
+    left: 14px;
+    z-index: 999;
+    pointer-events: none;
+    font-weight: bold;
+    text-shadow: 0px 0px 1px rgba( 0, 0, 0, 0.5 );
+}
+.mejs-time span.mejs-duration {
+    top: 0;
+    left: -40px;
 }
 
 .mejs-time .mejs-currenttime {}
