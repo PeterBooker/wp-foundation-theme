@@ -740,7 +740,7 @@ video.wp-video-shortcode {}
     position: relative;
     background: $mejs-primary-color; /* The Fallback */
     background: rgba( $mejs-primary-color, $mejs-control-opacity );
-    margin-left: 5px;
+    margin-left: 4px;
 }
 .mejs-mute {}
 .mejs-unmute {}
@@ -826,9 +826,8 @@ video.wp-video-shortcode {}
 .mejs-controls .mejs-horizontal-volume-slider {
   height:   32px;
   width:    46px;
-  //position: relative;
-  //display:  table;
-  //margin-left: 5px;
+  display:  table;
+  margin-left: 4px;
   position: absolute;
   top: 0;
   right: 0;
