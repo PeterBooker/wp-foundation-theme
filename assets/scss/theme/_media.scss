@@ -171,25 +171,24 @@ video.wp-video-shortcode {}
  * size.  Adjust by 1/2 of the height/width.
  */
 .mejs-overlay-button {
-  font-family: FontAwesome;
-  position: absolute;
-  top:      50%;
-  left:     50%;
-  width:    100px;
-  height:   100px;
-  margin:   -40px 0 0 -50px;
-  text-align: center;
-  /*background: url( 'images/bigplay.png' ) no-repeat;*/
+    font-family: FontAwesome;
+    position: absolute;
+    top:      50%;
+    left:     50%;
+    width:    140px;
+    height:   100px;
+    margin:   -40px 0 0 -70px;
+    text-align: center;
+    background-color: $mejs-primary-color; /* Fallback */
+    background-color: rgba( $mejs-primary-color, $mejs-control-opacity );
 }
 .mejs-overlay-button:before {
-  content: '\f04b';
-  font-size: 80px;
-  color: #fff;
-  float: left;
-  line-height: 1em;
-  margin-left: 20px;
-  text-shadow: 0px 0px 10px #111;
-  text-shadow: 0px 0px 10px rgba( 0, 0, 0, 0.7 );
+    content: '\f04b';
+    font-size: 60px;
+    color: #fff;
+    float: left;
+    line-height: 1em;
+    margin: 20px 0 0 50px;
 }
 
 /* Only needed if you use an .svg file for your normal background. */
@@ -198,10 +197,8 @@ video.wp-video-shortcode {}
 
 /* Adjust background position or other items when play button is hovered. */
 .mejs-overlay:hover .mejs-overlay-button {
-
-}
-.mejs-overlay:hover .mejs-overlay-button:before {
-  color: #ccc;
+    background-color: scale-color( $mejs-primary-color, $lightness: -20% ); /* Fallback */
+    background-color: rgba( scale-color( $mejs-primary-color, $lightness: -20% ), $mejs-control-opacity );
 }
 
 /* === Overlay loading === */
@@ -555,32 +552,33 @@ video.wp-video-shortcode {}
 .mejs-time-rail .mejs-time-total {
     position:   relative;
     margin: 4px 0;
+    background-color: scale-color( $mejs-primary-color, $lightness: -40% );
     background-color: rgba( scale-color( $mejs-primary-color, $lightness: -40% ), $mejs-control-opacity );
 }
 
 /* Buffering */
 .mejs-time-rail .mejs-time-buffering {
-  width: 100%;
+    width: 100%;
 
-  /* Theme authors: Overwrite just this portion for custom colors. */
-  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
-  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  /* === */
+    /* Theme authors: Overwrite just this portion for custom colors. */
+    background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    /* === */
 
-  -webkit-background-size: 15px 15px;
-  -moz-background-size:    15px 15px;
-  -o-background-size:      15px 15px;
-  background-size:         15px 15px;
+    -webkit-background-size: 15px 15px;
+    -moz-background-size:    15px 15px;
+    -o-background-size:      15px 15px;
+    background-size:         15px 15px;
 
-  -webkit-animation: buffering-stripes 2s linear infinite;
-  -moz-animation:    buffering-stripes 2s linear infinite;
-  -ms-animation:     buffering-stripes 2s linear infinite;
-  -o-animation:      buffering-stripes 2s linear infinite;
-  animation:         buffering-stripes 2s linear infinite;
+    -webkit-animation: buffering-stripes 2s linear infinite;
+    -moz-animation:    buffering-stripes 2s linear infinite;
+    -ms-animation:     buffering-stripes 2s linear infinite;
+    -o-animation:      buffering-stripes 2s linear infinite;
+    animation:         buffering-stripes 2s linear infinite;
 }
 
 /* Keyframes */
@@ -607,8 +605,9 @@ video.wp-video-shortcode {}
 
 /* Time loaded */
 .mejs-time-rail .mejs-time-loaded {
-  width:      0;       /* Don't overwrite. Mediaelement will adjust the width. */
-  background-color: rgba( scale-color( $mejs-primary-color, $lightness: 30% ), $mejs-control-opacity );
+    width:      0;       /* Don't overwrite. Mediaelement will adjust the width. */
+    background: scale-color( $mejs-primary-color, $lightness: 30% ); /* The Fallback */
+    background: rgba( scale-color( $mejs-primary-color, $lightness: 30% ), $mejs-control-opacity );
 }
 
 /* Current time. */
@@ -640,43 +639,44 @@ video.wp-video-shortcode {}
 
 /* Handle for adjusting current time. */
 .mejs-time-rail .mejs-time-handle {
-  //display:    none;
-  position: absolute;
-  top: 0;
-  margin-top: -4px;
-  margin-left: -4px;
-  width: 5px;
-  height: 32px;
-  background-color: #fff;
-  background-color: rgba( #fff, 0.7 );
-  cursor: pointer;
-  text-align: center;
+    //display:    none;
+    position: absolute;
+    top: 0;
+    margin-top: -4px;
+    margin-left: -4px;
+    width: 5px;
+    height: 32px;
+    background-color: #fff;
+    background-color: rgba( #fff, 0.7 );
+    cursor: pointer;
+    text-align: center;
 }
 
 /* Time float (Displays time when hovering cursor over time rail). */
 .mejs-time-rail .mejs-time-float {
-  display:     none;
-  position:    absolute;
-  top:         -26px;
-  width:       36px;
-  height:      17px;
-  margin-left: -18px;
-  color:       #fff;
-  background-color:  $mejs-primary-color;
-  text-align:  center;
+    display:     none;
+    position:    absolute;
+    top:         -26px;
+    width:       36px;
+    height:      17px;
+    margin-left: -18px;
+    color:       #fff;
+    background: $mejs-primary-color; /* The Fallback */
+    background: rgba( $mejs-primary-color, $mejs-control-opacity );
+    text-align:  center;
 }
 
 .mejs-long-video .mejs-time-rail .mejs-time-float {
-  width: 48px;
+    width: 48px;
 }
 
 /* Current time position hovering. */
 .mejs-time-rail .mejs-time-float-current {
-  display:    block;
-  left:       0;
-  margin:     2px;
-  width:      32px;
-  text-align: center;
+    display:    block;
+    left:       0;
+    margin:     2px;
+    width:      32px;
+    text-align: center;
 }
 
 .mejs-long-video .mejs-time-rail .mejs-time-float-current {
@@ -708,9 +708,10 @@ video.wp-video-shortcode {}
 
 /* Fullscreen button */
 .mejs-button.mejs-fullscreen-button {
-  position: relative;
-  background-color: $mejs-primary-color;
-  margin-left: 5px;
+    position: relative;
+    background: $mejs-primary-color; /* The Fallback */
+    background: rgba( $mejs-primary-color, $mejs-control-opacity );
+    margin-left: 5px;
 }
 .mejs-fullscreen-button button {
     padding: 7px 10px;
@@ -734,7 +735,8 @@ video.wp-video-shortcode {}
 /* Volume button */
 .mejs-controls .mejs-volume-button {
     position: relative;
-    background-color: $mejs-primary-color;
+    background: $mejs-primary-color; /* The Fallback */
+    background: rgba( $mejs-primary-color, $mejs-control-opacity );
     margin-left: 5px;
 }
 .mejs-mute {}
@@ -772,7 +774,7 @@ video.wp-video-shortcode {}
   display:    none;
   position:   absolute;
   top:        -115px;
-  left:       3px;
+  left:       10px;
   width:      25px;
   height:     115px;
   margin:     0;
