@@ -38,8 +38,10 @@
             margin: 0;
         }
 
-        .recentcomments {
+        .recentcomments a {
             text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
 
     }
