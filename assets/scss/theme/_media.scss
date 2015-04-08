@@ -762,7 +762,8 @@ video.wp-video-shortcode {}
 }
 .mejs-volume-button.mejs-mute button:before {
   content: '\f028';
-  color: #fff;
+  position: relative;
+  z-index: 999;
 }
 
 .mejs-volume-button .mejs-unmute button {
@@ -770,6 +771,8 @@ video.wp-video-shortcode {}
 }
 .mejs-volume-button.mejs-unmute button:before {
   content: '\f026';
+  position: relative;
+  z-index: 999;
 }
 
 /* Vertical volume slider (wrapper). */
@@ -821,37 +824,40 @@ video.wp-video-shortcode {}
 
 /* === Horizontal volume slider (audio) === */
 .mejs-controls .mejs-horizontal-volume-slider {
-  height:   26px;
-  width:    60px;
+  height:   32px;
+  width:    46px;
   position: relative;
   display:  table;
   margin-left: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 /* Volume total. */
 .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
-  position:   absolute;
-  top:        9px;
+  position: absolute;
+  top:        0;
   left:       0;
-  width:      55px;
-  height:     12px;
+  width:      100%;
+  height:     100%;
   margin:     0;
   padding:    0;
   font-size:  1px;
-  background: darken( $dark-base-color, 6% );
+  background-color: transparent;
 }
 
 /* Volume current. */
 .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
-  position:   absolute;
-  top:        9px;
+  position: absolute;
+  top:        0;
   left:       0;
-  width:      50px;
-  height:     12px;
+  width:      100%;
+  height:     100%;
   margin:     0;
   padding:    0;
   font-size:  1px;
-  background: $mejs-primary-color;
+  background: rgba( $mejs-primary-color, 0.8 );
 }
 
 /* Volume handle. */
