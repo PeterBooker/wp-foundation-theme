@@ -765,110 +765,112 @@ video.wp-video-shortcode {}
 }
 
 .mejs-volume-button .mejs-mute button {
-  background-color: transparent;
+    background-color: transparent;
 }
 .mejs-volume-button.mejs-mute button:before {
-  content: '\f028';
-  position: relative;
-  z-index: 999;
+    content: '\f028';
+    position: relative;
+    z-index: 999;
+    pointer-events: none;
 }
 
 .mejs-volume-button .mejs-unmute button {
-  background-color: transparent;
+    background-color: transparent;
 }
 .mejs-volume-button.mejs-unmute button:before {
-  content: '\f026';
-  position: relative;
-  z-index: 999;
+    content: '\f026';
+    position: relative;
+    z-index: 999;
+    pointer-events: none;
 }
 
 /* Vertical volume slider (wrapper). */
 .mejs-volume-button .mejs-volume-slider {
-  display:    none;
-  position:   absolute;
-  top:        -115px;
-  left:       10px;
-  width:      25px;
-  height:     115px;
-  margin:     0;
-  background: $dark-base-color;
-  z-index:    1;
+    display:    none;
+    position:   absolute;
+    top:        -115px;
+    left:       10px;
+    width:      25px;
+    height:     115px;
+    margin:     0;
+    background: $dark-base-color;
+    z-index:    1;
 }
 
 /* Volume total. */
 .mejs-volume-button .mejs-volume-slider .mejs-volume-total {
-  position:   absolute;
-  top:        8px;
-  left:       11px;
-  width:      2px;
-  height:     100px;
-  margin:     0;
-  background: #777;
+    position:   absolute;
+    top:        8px;
+    left:       11px;
+    width:      2px;
+    height:     100px;
+    margin:     0;
+    background: #777;
 }
 
 /* Volume current */
 .mejs-volume-button .mejs-volume-slider .mejs-volume-current {
-  position:   absolute;
-  top:        8px;
-  left:       11px;
-  width:      2px;
-  height:     100px;
-  margin:     0;
-  background: $mejs-primary-color;
+    position:   absolute;
+    top:        8px;
+    left:       11px;
+    width:      2px;
+    height:     100px;
+    margin:     0;
+    background: $mejs-primary-color;
 }
 
 /* Volume slider handle */
 .mejs-volume-button .mejs-volume-slider .mejs-volume-handle {
-  position:   absolute;
-  top:        -3px;
-  left:       4px;
-  width:      16px;
-  height:     6px;
-  margin:     0;
-  background: $white;
-  cursor:     N-resize;
+    position:   absolute;
+    top:        -3px;
+    left:       4px;
+    width:      16px;
+    height:     6px;
+    margin:     0;
+    background: $white;
+    cursor:     N-resize;
 }
 
 /* === Horizontal volume slider (audio) === */
 .mejs-controls .mejs-horizontal-volume-slider {
-  height:   32px;
-  width:    46px;
-  display:  table;
-  margin-left: 6px;
-  position: absolute;
-  top: 0;
-  right: 0;
+    height:   32px;
+    width:    46px;
+    display:  table;
+    margin-left: 6px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 /* Volume total. */
 .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
-  position: absolute;
-  top:        0;
-  left:       0;
-  width:      100%;
-  height:     100%;
-  margin:     0;
-  padding:    0;
-  font-size:  1px;
-  background-color: transparent;
+    position: absolute;
+    top:        0;
+    left:       0;
+    width:      100%;
+    height:     100%;
+    margin:     0;
+    padding:    0;
+    font-size:  1px;
+    background-color: transparent;
 }
 
 /* Volume current. */
 .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
-  position: absolute;
-  top:        0;
-  left:       0;
-  width:      100%;
-  height:     100%;
-  margin:     0;
-  padding:    0;
-  font-size:  1px;
-  background: rgba( $mejs-primary-color, 0.8 );
+    position: absolute;
+    top:        0;
+    left:       0;
+    width:      100%;
+    height:     100%;
+    margin:     0;
+    padding:    0;
+    font-size:  1px;
+    background: rgba( $mejs-primary-color, 0.8 );
 }
 
 /* Volume handle. */
 .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle {
-  display: none;
+    display: none;
 }
 
 /* === Loop Button === */
