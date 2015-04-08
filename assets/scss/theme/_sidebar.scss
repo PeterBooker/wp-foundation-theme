@@ -38,14 +38,6 @@
             margin: 0;
         }
 
-        .recentcomments {
-            display: block;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            max-width: 100%;
-        }
-
     }
 
 }
@@ -56,4 +48,20 @@
 
 .widget.widget_search input {
     margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+2.0 Recent Comments Widget
+--------------------------------------------------------------*/
+
+.widget_recent_comments {
+
+    // Fix long Titles overflowing.
+    .recentcomments {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
 }
