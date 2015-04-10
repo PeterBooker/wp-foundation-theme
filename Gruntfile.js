@@ -136,7 +136,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task.
-    grunt.registerTask( 'default', ['watch', 'concat', 'jshint', 'uglify', 'sass', 'cssmin'] );
+    grunt.registerTask( 'default', ['concat', 'jshint', 'uglify', 'sass', 'cssmin'] );
+    grunt.registerTask( 'dev', ['watch'] );
     grunt.registerTask( 'update', ['copy'] );
 
     grunt.util.linefeed = '\n';
