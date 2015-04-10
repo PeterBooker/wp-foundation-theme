@@ -5,6 +5,7 @@
 // Common Values
 $mejs-control-opacity: 0.8;
 $mejs-primary-color: $primary-color;
+$mejs-primary-color: #fc5a20;
 $mejs-base-color: $base-color;
 
 /*--------------------------------------------------------------
@@ -404,7 +405,9 @@ video.wp-video-shortcode {}
 .mejs-video:hover .mejs-controls {
     opacity: 1;
 }
-
+.mejs-audio .mejs-controls {
+    //background-color: $mejs-primary-color;
+}
 
 /* Individual control sections. */
 .mejs-controls > div,
@@ -448,8 +451,7 @@ video.wp-video-shortcode {}
 
 .mejs-button.mejs-playpause-button {
     position: relative;
-    background: $mejs-primary-color; /* The Fallback */
-    background: rgba( $mejs-primary-color, $mejs-control-opacity );
+    background: $mejs-primary-color;
     margin-right: 5px;
 }
 .mejs-play {} /* Class when playing. */
@@ -515,8 +517,7 @@ video.wp-video-shortcode {}
     float: left;
     width: auto;
     margin: 10px 0 0 0;
-    color: rgba( 255, 255, 255, 0.8 );
-    z-index: 999;
+    z-index: 50;
     pointer-events: none;
     font-size: 13px;
     font-weight: bold;
@@ -539,7 +540,6 @@ video.wp-video-shortcode {}
     width:     200px;
     padding:   0px 4px 0;
     background-color: $mejs-primary-color;
-    background-color: rgba( $mejs-primary-color, $mejs-control-opacity );
 }
 
 /* Wrapper for the time rail elements. */
@@ -559,8 +559,7 @@ video.wp-video-shortcode {}
 .mejs-time-rail .mejs-time-total {
     position:   relative;
     margin: 4px 0;
-    background-color: scale-color( $mejs-primary-color, $lightness: -40% );
-    background-color: rgba( scale-color( $mejs-primary-color, $lightness: -40% ), $mejs-control-opacity );
+    background-color: scale-color( $mejs-primary-color, $lightness: -20% );
 }
 
 /* Buffering */
@@ -570,9 +569,8 @@ video.wp-video-shortcode {}
 
 /* Time loaded */
 .mejs-time-rail .mejs-time-loaded {
-    width:      0;       /* Don't overwrite. Mediaelement will adjust the width. */
-    background: scale-color( $mejs-primary-color, $lightness: 30% ); /* The Fallback */
-    background: rgba( scale-color( $mejs-primary-color, $lightness: 30% ), $mejs-control-opacity );
+    width: 0; /* Don't overwrite. Mediaelement will adjust the width. */
+    background: scale-color( $mejs-primary-color, $lightness: 20% );
 }
 
 /* Current time. */
@@ -592,12 +590,12 @@ video.wp-video-shortcode {}
     background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.20) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.20) 50%, rgba(255, 255, 255, 0.20) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 
     -webkit-background-size: 15px 15px;
     -moz-background-size:    15px 15px;
     -o-background-size:      15px 15px;
-    background-size:         4px 4px;
+    background-size:         8px 8px;
 
 }
 
@@ -618,16 +616,15 @@ video.wp-video-shortcode {}
 
 /* Time float (Displays time when hovering cursor over time rail). */
 .mejs-time-rail .mejs-time-float {
-    display:     none;
-    position:    absolute;
-    top:         -26px;
-    width:       36px;
-    height:      17px;
+    display: none;
+    position: absolute;
+    top: -26px;
+    width: 36px;
+    height: 17px;
     margin-left: -18px;
-    color:       #fff;
-    background: $mejs-primary-color; /* The Fallback */
-    background: rgba( $mejs-primary-color, $mejs-control-opacity );
-    text-align:  center;
+    color: #fff;
+    background: $mejs-primary-color;
+    text-align: center;
 }
 
 .mejs-long-video .mejs-time-rail .mejs-time-float {
@@ -636,10 +633,10 @@ video.wp-video-shortcode {}
 
 /* Current time position hovering. */
 .mejs-time-rail .mejs-time-float-current {
-    display:    block;
-    left:       0;
-    margin:     2px;
-    width:      32px;
+    display: block;
+    left: 0;
+    margin: 2px;
+    width: 32px;
     text-align: center;
 }
 
@@ -649,18 +646,18 @@ video.wp-video-shortcode {}
 
 /* Pointer at the botton of the time float. */
 .mejs-time-rail .mejs-time-float-corner {
-    display:      block;
-    position:     absolute;
-    top:          15px;
-    left:         13px;
-    width:        0;
-    height:       0;
-    line-height:  0;
-    border:       solid 5px $mejs-primary-color;
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 13px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: solid 5px $mejs-primary-color;
     border-color: $mejs-primary-color transparent transparent transparent;
 
     -webkit-border-radius: 0;
-    -moz-border-radius:    0;
+    -moz-border-radius: 0;
     border-radius: 0;
 }
 
@@ -673,8 +670,7 @@ video.wp-video-shortcode {}
 /* Fullscreen button */
 .mejs-button.mejs-fullscreen-button {
     position: relative;
-    background: $mejs-primary-color; /* The Fallback */
-    background: rgba( $mejs-primary-color, $mejs-control-opacity );
+    background: $mejs-primary-color;
     margin-left: 5px;
 }
 .mejs-fullscreen-button button {
@@ -699,8 +695,7 @@ video.wp-video-shortcode {}
 /* Volume button */
 .mejs-controls .mejs-volume-button {
     position: relative;
-    background: $mejs-primary-color; /* The Fallback */
-    background: rgba( $mejs-primary-color, $mejs-control-opacity );
+    background: scale-color( $mejs-primary-color, $lightness: 10% ); /* The Fallback */
     margin-left: 5px;
 }
 .mejs-audio .mejs-controls .mejs-volume-button {
@@ -729,7 +724,7 @@ video.wp-video-shortcode {}
 .mejs-volume-button.mejs-mute button:before {
     content: '\f028';
     position: relative;
-    z-index: 999;
+    z-index: 50;
     pointer-events: none;
 }
 
@@ -739,7 +734,7 @@ video.wp-video-shortcode {}
 .mejs-volume-button.mejs-unmute button:before {
     content: '\f026';
     position: relative;
-    z-index: 999;
+    z-index: 50;
     pointer-events: none;
 }
 
@@ -824,7 +819,7 @@ video.wp-video-shortcode {}
     margin:     0;
     padding:    0;
     font-size:  1px;
-    background: rgba( $mejs-primary-color, 0.8 );
+    background-color: $mejs-primary-color;
 }
 
 /* Volume handle. */
@@ -1014,9 +1009,9 @@ video.wp-video-shortcode {}
 }
 
 .wp-playlist-dark {
-    color:      #fff;
-    border: 1px solid #ddd;
-    background: #333;
+    color:      #efefef;
+    border: 1px solid #666;
+    background: #444;
 }
 
 .wp-playlist video {
@@ -1044,11 +1039,10 @@ video.wp-video-shortcode {}
     max-width:     88%;
     overflow:      hidden;
     text-overflow: ellipsis;
+    font-size: 14px;
 }
 
-.wp-playlist-item-title {
-
-}
+.wp-playlist-item-title {}
 
 .wp-playlist-item-artist {}
 
@@ -1065,6 +1059,7 @@ video.wp-video-shortcode {}
     margin: 0 rem-calc(20) rem-calc(10) 0;
     background: #fff;
 }
+
 .ltr .wp-playlist-current-item img {
     float: left;
     margin: 0 rem-calc(20) rem-calc(10) 0;
@@ -1083,6 +1078,9 @@ video.wp-video-shortcode {}
 /* Track list after the current item. */
 .wp-playlist-tracks {
     margin-top: 1.5rem;
+    max-height: 210px;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 /* Playlist items in the list (not currently playing). */
@@ -1095,6 +1093,9 @@ video.wp-video-shortcode {}
     font-size: 14px;
     transition: background-color, 300ms, ease-in-out;
 }
+.wp-playlist-dark .wp-playlist-item {
+    border-bottom: 1px solid #666;
+}
 .wp-playlist-item:last-child {
     margin-bottom: 0;
     border-bottom: none;
@@ -1102,9 +1103,15 @@ video.wp-video-shortcode {}
 .wp-playlist-item:hover {
     background: #f4f4f4;
 }
+.wp-playlist-dark .wp-playlist-item:hover {
+    background: #383838;
+}
 
 .wp-playlist-item .wp-playlist-caption {
     color: #555;
+}
+.wp-playlist-dark .wp-playlist-item .wp-playlist-caption {
+    color: #efefef;
 }
 
 .wp-playlist-item .wp-playlist-item-length {
@@ -1120,6 +1127,9 @@ video.wp-video-shortcode {}
 /* Currently-playing item in the track list. */
 .wp-playlist-playing {
     background-color: #f4f4f4;
+}
+.wp-playlist-dark .wp-playlist-playing {
+    background-color: #383838;
 }
 
 .wp-playlist-light .wp-playlist-playing {}
