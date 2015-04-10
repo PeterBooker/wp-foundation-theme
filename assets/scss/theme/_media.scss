@@ -18,16 +18,16 @@ $mejs-base-color: $base-color;
 /* ====== Container ====== */
 
 .mejs-container {
-  display:         block;
-  position:        relative;
-  margin:          0;
-  padding:         0;
-  vertical-align:  baseline;
-  outline:         none;
-  font-size:       100%;
-  background:      transparent;
-  border:          none;
-  text-decoration: none;
+    display:         block;
+    position:        relative;
+    margin:          0;
+    padding:         0;
+    vertical-align:  baseline;
+    outline:         none;
+    font-size:       100%;
+    background:      transparent;
+    border:          none;
+    text-decoration: none;
 }
 
 /* Alternatives to .mejs-container. Note that these classses are given to the <audio> and <video> elements. */
@@ -40,17 +40,17 @@ $mejs-base-color: $base-color;
 /* === Fullscreen view === */
 
 .mejs-fullscreen {
-  overflow: hidden !important;
+    overflow: hidden !important;
 }
 
 .mejs-container-fullscreen {
-  overflow: hidden;
-  position: fixed;
-  left:     0;
-  top:      0;
-  right:    0;
-  bottom:   0;
-  z-index:  1000;
+    overflow: hidden;
+    position: fixed;
+    left:     0;
+    top:      0;
+    right:    0;
+    bottom:   0;
+    z-index:  1000;
 }
 
 /* === Inner wrapper === */
@@ -69,15 +69,15 @@ $mejs-base-color: $base-color;
  * --------------------------------------------------------------------------- */
 
 .mejs-mediaelement {
-  position: absolute;
-  top:      0;
-  left:     0;
-  width:    100%;
-  height:   100%;
-  background: darken( $mejs-base-color, 12% );
+    position: absolute;
+    top:      0;
+    left:     0;
+    width:    100%;
+    height:   100%;
+    background: darken( $mejs-base-color, 12% );
 }
 .mejs-audio .mejs-mediaelement {
-  background: transparent;
+    background: transparent;
 }
 
 /* Audio and video elements */
@@ -90,42 +90,42 @@ video.wp-video-shortcode {}
 /* Fullscreen */
 .mejs-container-fullscreen .mejs-mediaelement,
 .mejs-container-fullscreen video {
-  width:  100%;
-  height: 100%;
+    width:  100%;
+    height: 100%;
 }
 
 /* ?? */
 .me-plugin {
-  position: absolute;
+    position: absolute;
 }
 
 /* Embedding youtube.com, etc.??? */
 .mejs-embed,
 .mejs-embed body {
-  overflow: hidden;
-  width:    100%;
-  height:   100%;
-  margin:   0;
-  padding:  0;
+    overflow: hidden;
+    width:    100%;
+    height:   100%;
+    margin:   0;
+    padding:  0;
 }
 
 /* === Background ?? === */
 
 .mejs-background {
-  position: absolute;
-  top:      0;
-  left:     0;
+    position: absolute;
+    top:      0;
+    left:     0;
 }
 
 /* === Cannot play file link === */
 
 .me-cannotplay a {
-  color: #fff;
+    color: #fff;
 }
 
 .me-cannotplay span {
-  display: block;
-  padding: 15px;
+    display: block;
+    padding: 15px;
 }
 
 /**
@@ -137,36 +137,36 @@ video.wp-video-shortcode {}
 /* === Poster - <video poster="example.png"> - default video image. === */
 
 .mejs-poster {
-  position:            absolute;
-  top:                 0;
-  left:                0;
-  background-size:     contain;
-  background-position: 50% 50%;
-  background-repeat:   no-repeat;
+    position:            absolute;
+    top:                 0;
+    left:                0;
+    background-size:     contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
 }
 
 :root .mejs-poster img {
-  display: none;
+    display: none;
 }
 
 .mejs-poster img {
-  margin:  0;
-  padding: 0;
-  border:  none;
+    margin:  0;
+    padding: 0;
+    border:  none;
 }
 
 /* === Overlay === */
 
 .mejs-overlay {
-  position: absolute;
-  top:      0;
-  left:     0;
+    position: absolute;
+    top:      0;
+    left:     0;
 }
 
 /* === Overlay play button === */
 
 .mejs-overlay-play {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /**
@@ -211,58 +211,56 @@ video.wp-video-shortcode {}
  * and margin values (1/2 of size) for a different size.
  */
 .mejs-overlay-loading {
-  position:   absolute;
-  width:      100%;
-  height:     100%;
-  background: #333;
-  background: rgba( 51, 51, 51, 0.75 );
+    position:   absolute;
+    width:      100%;
+    height:     100%;
+    background: #333;
+    background: rgba( 51, 51, 51, 0.75 );
 }
 
 .mejs-overlay-loading span {
-  font-family: FontAwesome;
-  position:   absolute;
-  display:    block;
-  top:        50%;
-  left:       50%;
-  width:      80px;
-  height:     80px;
-  margin:     -50px 0 0 -50px;
-  -webkit-animation: fa-spin 2s infinite linear;
-  animation: fa-spin 2s infinite linear;
-  @include fa-icon();
-  /*background: transparent url( 'images/loading.gif' ) 50% 50% no-repeat;*/
+    font-family: FontAwesome;
+    position:   absolute;
+    display:    block;
+    top:        50%;
+    left:       50%;
+    width:      80px;
+    height:     80px;
+    margin:     -50px 0 0 -50px;
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
 }
 .mejs-overlay-loading span:before {
-  content: '\f110';
-  font-size: 80px;
-  color: #fff;
-  float: left;
-  line-height: 1em;
-  height: 80px;
-  width: 80px;
-  display: block;
-  margin: 0;
+    content: '\f110';
+    font-size: 80px;
+    color: #fff;
+    float: left;
+    line-height: 1em;
+    height: 80px;
+    width: 80px;
+    display: block;
+    margin: 0;
 }
 
 @-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
 }
 @keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
 }
 
 /* === Captions Layer (not supported in WP core as of 3.6). === */
@@ -270,33 +268,33 @@ video.wp-video-shortcode {}
 /* Example: http://mediaelementjs.com/examples/?name=translation */
 
 .mejs-captions-layer {
-  position:   absolute;
-  bottom:     0;
-  left:       0;
-  text-align: center;
-  color:      #fff;
+    position:   absolute;
+    bottom:     0;
+    left:       0;
+    text-align: center;
+    color:      #fff;
 }
 
 .mejs-captions-layer a {
-  color:           #fff;
-  text-decoration: underline;
+    color:           #fff;
+    text-decoration: underline;
 }
 
 .mejs-captions-position {
-  position: absolute;
-  width:    100%;
-  bottom:   15px;
-  left:     0;
+    position: absolute;
+    width:    100%;
+    bottom:   15px;
+    left:     0;
 }
 
 .mejs-captions-position-hover {
-  bottom: 45px;
+    bottom: 45px;
 }
 
 .mejs-captions-text {
-  padding:    3px 5px;
-  background: #141414;
-  background: rgba(20, 20, 20, 0.8);
+    padding:    3px 5px;
+    background: #141414;
+    background: rgba(20, 20, 20, 0.8);
 }
 
 /* ====== Chapters Layer (not supported in WP core as of 3.6). ====== */
@@ -304,83 +302,83 @@ video.wp-video-shortcode {}
 /* Example: http://mediaelementjs.com/examples/?name=chapters */
 
 .mejs-chapters {
-  position: absolute;
-  top:      0;
-  left:     0;
-  width:    10000px;
-  z-index:  1;
+    position: absolute;
+    top:      0;
+    left:     0;
+    width:    10000px;
+    z-index:  1;
 
-  -xborder-right: solid 1px #fff;
+    -xborder-right: solid 1px #fff;
 }
 
 .mejs-chapter {
-  overflow:   hidden;
-  position:   absolute;
-  float:      left;
-  background: #222;
-  border:     none;
+    overflow:   hidden;
+    position:   absolute;
+    float:      left;
+    background: #222;
+    border:     none;
 }
 
 .mejs-chapter-block {
-  display:       block;
-  padding:       5px;
-  color:         #fff;
-  border-right:  solid 1px #333;
-  border-bottom: solid 1px #333;
-  cursor:        pointer;
+    display:       block;
+    padding:       5px;
+    color:         #fff;
+    border-right:  solid 1px #333;
+    border-bottom: solid 1px #333;
+    cursor:        pointer;
 }
 
 .mejs-chapter-block-last {
-  border-right: none;
+    border-right: none;
 }
 
 .mejs-chapter-block:hover {
-  background: #666;
+    background: #666;
 }
 
 .mejs-chapter-block .ch-title {
-  display:       block;
-  white-space:   nowrap;
-  text-overflow: ellipsis;
-  margin:        0 0 3px;
+    display:       block;
+    white-space:   nowrap;
+    text-overflow: ellipsis;
+    margin:        0 0 3px;
 }
 
 .mejs-chapter-block .ch-timespan {
-  display:       block;
-  white-space:   nowrap;
-  text-overflow: ellipsis;
-  margin:        3px 0 4px;
+    display:       block;
+    white-space:   nowrap;
+    text-overflow: ellipsis;
+    margin:        3px 0 4px;
 }
 
 /* === Postroll Layer === */
 
 .mejs-postroll-layer {
-  overflow:   hidden;
-  position:   absolute;
-  bottom:     0;
-  left:       0;
-  width:      100%;
-  height:     100%;
-  background: #323232;
-  background: rgba( 50, 50, 50, 0.7 );
-  z-index:    1000;
+    overflow:   hidden;
+    position:   absolute;
+    bottom:     0;
+    left:       0;
+    width:      100%;
+    height:     100%;
+    background: #323232;
+    background: rgba( 50, 50, 50, 0.7 );
+    z-index:    1000;
 }
 
 .mejs-postroll-layer-content {
-  width:  100%;
-  height: 100%;
+    width:  100%;
+    height: 100%;
 }
 
 .mejs-postroll-close {
-  position:   absolute;
-  right:      0;
-  top:        0;
-  padding:    4px;
-  color:      #fff;
-  background: #323232;
-  background: rgba( 50, 50, 50, 0.7 );
-  cursor:     pointer;
-  z-index:    100;
+    position:   absolute;
+    right:      0;
+    top:        0;
+    padding:    4px;
+    color:      #fff;
+    background: #323232;
+    background: rgba( 50, 50, 50, 0.7 );
+    cursor:     pointer;
+    z-index:    100;
 }
 
 /**
@@ -399,12 +397,12 @@ video.wp-video-shortcode {}
     background-color: transparent;
 }
 .mejs-video .mejs-controls {
-  opacity: 0;
-  transition: opacity 0.3s linear;
-  background-color: transparent;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    background-color: transparent;
 }
 .mejs-video:hover .mejs-controls {
-  opacity:1;
+    opacity: 1;
 }
 
 
@@ -498,13 +496,11 @@ video.wp-video-shortcode {}
 /* === Media Time (current time) === */
 
 .mejs-controls .mejs-time {
-    //overflow:   hidden;
     display:    block;
     width:      0;
     height:     17px;
     padding:    8px 0 0;
     color:      #fff;
-    text-align: center;
     position: relative;
 
     -moz-box-sizing:    content-box;
@@ -514,27 +510,27 @@ video.wp-video-shortcode {}
 
 /* Individual elements within the time wrapper. */
 .mejs-time span {
-    position: relative;
+    position: absolute;
     display: block;
-    float:   left;
-    width:   auto;
-    margin:  2px 2px 0 0;
-    color:   #fff;
-    color:   rgba( 255, 255, 255, 0.9 );
-    top: 0;
-    left: 14px;
+    float: left;
+    width: auto;
+    margin: 10px 0 0 0;
+    color: rgba( 255, 255, 255, 0.8 );
     z-index: 999;
     pointer-events: none;
+    font-size: 13px;
     font-weight: bold;
-    text-shadow: 0px 0px 1px rgba( 0, 0, 0, 0.5 );
 }
-.mejs-time span.mejs-duration {
+.mejs-time .mejs-currenttime {
+    float: left;
     top: 0;
-    left: -40px;
+    left: 14px;
 }
-
-.mejs-time .mejs-currenttime {}
-.mejs-time .mejs-duration {}
+.mejs-time .mejs-duration {
+    float: right;
+    top: 0;
+    right: 14px;
+}
 
 /* Wrapper div for the time rail. */
 
@@ -569,51 +565,7 @@ video.wp-video-shortcode {}
 
 /* Buffering */
 .mejs-time-rail .mejs-time-buffering {
-
     width: 100%;
-
-    /* Theme authors: Overwrite just this portion for custom colors. */
-    //background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    //background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
-    //background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    //background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    //background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    //background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    /* === */
-
-    //-webkit-background-size: 15px 15px;
-    //-moz-background-size:    15px 15px;
-    //-o-background-size:      15px 15px;
-    //background-size:         15px 15px;
-
-    //-webkit-animation: buffering-stripes 2s linear infinite;
-    //-moz-animation:    buffering-stripes 2s linear infinite;
-    //-ms-animation:     buffering-stripes 2s linear infinite;
-    //-o-animation:      buffering-stripes 2s linear infinite;
-    //animation:         buffering-stripes 2s linear infinite;
-
-}
-
-/* Keyframes */
-@-webkit-keyframes buffering-stripes {
-  from { background-position: 0 0;    }
-  to   { background-position: 30px 0; }
-}
-@-moz-keyframes buffering-stripes {
-  from { background-position: 0 0;    }
-  to   { background-position: 30px 0; }
-}
-@-ms-keyframes buffering-stripes {
-  from { background-position: 0 0;    }
-  to   { background-position: 30px 0; }
-}
-@-o-keyframes buffering-stripes {
-  from { background-position: 0 0;    }
-  to   { background-position: 30px 0; }
-}
-@keyframes buffering-stripes {
-  from { background-position: 0 0;    }
-  to   { background-position: 30px 0; }
 }
 
 /* Time loaded */
@@ -632,7 +584,6 @@ video.wp-video-shortcode {}
     height: 32px;
     border: 4px solid rgba( #fff, 0.3 );
     border-right: none;
-    background-color: rgba( #fff, 0.1 );
     background-color: transparent;
 
     /* Theme authors: Overwrite just this portion for custom colors. */
@@ -641,14 +592,12 @@ video.wp-video-shortcode {}
     background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-
-    /* === */
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.20) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.20) 50%, rgba(255, 255, 255, 0.20) 75%, transparent 75%, transparent);
 
     -webkit-background-size: 15px 15px;
     -moz-background-size:    15px 15px;
     -o-background-size:      15px 15px;
-    background-size:         15px 15px;
+    background-size:         4px 4px;
 
 }
 
@@ -920,7 +869,7 @@ video.wp-video-shortcode {}
 
 /* Captions button wrapper */
 .mejs-controls .mejs-captions-button {
-  position: relative;
+    position: relative;
 }
 
 .mejs-captions-button button {
@@ -928,104 +877,104 @@ video.wp-video-shortcode {}
 }
 
 .mejs-captions-button .mejs-captions-selector {
-  overflow:   hidden;
-  visibility: hidden;
-  position:   absolute;
-  bottom:     26px;
-  right:      -10px;
-  width:      130px;
-  height:     100px;
-  padding:    10px;
-  background: #323232;
-  background: rgba( 50, 50, 50, 0.7 );
+    overflow:   hidden;
+    visibility: hidden;
+    position:   absolute;
+    bottom:     26px;
+    right:      -10px;
+    width:      130px;
+    height:     100px;
+    padding:    10px;
+    background: #323232;
+    background: rgba( 50, 50, 50, 0.7 );
 }
 
 .mejs-captions-button .mejs-captions-selector ul {
-  list-style-type: none;
-  overflow:        hidden;
-  display:         block;
-  margin:          0;
-  padding:         0;
+    list-style-type: none;
+    overflow:        hidden;
+    display:         block;
+    margin:          0;
+    padding:         0;
 }
 
 .mejs-captions-button .mejs-captions-selector li {
-  list-style-type: none;
-  overflow:        hidden;
-  display:         block;
-  margin:          0 0 6px;
-  padding:         0;
-  color:           #fff;
+    list-style-type: none;
+    overflow:        hidden;
+    display:         block;
+    margin:          0 0 6px;
+    padding:         0;
+    color:           #fff;
 }
 
 .mejs-captions-button .mejs-captions-selector input {
-  clear:  both;
-  float:  left;
-  margin: 3px 3px 0 5px;
+    clear:  both;
+    float:  left;
+    margin: 3px 3px 0 5px;
 }
 
 .mejs-captions-button .mejs-captions-selector label {
-  float:   left;
-  width:   100px;
-  padding: 4px 0 0;
+    float:   left;
+    width:   100px;
+    padding: 4px 0 0;
 }
 
 .mejs-captions-button .mejs-captions-translations {
-  margin: 0 0 5px;
+    margin: 0 0 5px;
 }
 
 /* === Source Chooser === */
 
 .mejs-controls .mejs-sourcechooser-button {
-  position: relative;
+    position: relative;
 }
 
 .mejs-sourcechooser-button button {
-  background-position: -128px 0;
+    background-position: -128px 0;
 }
 
 .mejs-sourcechooser-selector {
-  overflow:   hidden;
-  visibility: hidden;
-  position:   absolute;
-  bottom:     26px;
-  right:      -10px;
-  width:      130px;
-  height:     100px;
-  padding:    10px;
-  background: #323232;
-  background: rgba( 50, 50, 50, 0.7 );
-  border:     solid 1px transparent;
+    overflow:   hidden;
+    visibility: hidden;
+    position:   absolute;
+    bottom:     26px;
+    right:      -10px;
+    width:      130px;
+    height:     100px;
+    padding:    10px;
+    background: #323232;
+    background: rgba( 50, 50, 50, 0.7 );
+    border:     solid 1px transparent;
 }
 
 .mejs-sourcechooser-selector ul {
-  list-style-type: none;
-  overflow:        hidden;
-  display:         block;
-  margin:          0;
-  padding:         0;
+    list-style-type: none;
+    overflow:        hidden;
+    display:         block;
+    margin:          0;
+    padding:         0;
 }
 
 .mejs-sourcechooser-selector li {
-  list-style-type: none;
-  overflow:        hidden;
-  display:         block;
-  margin:          0 0 6px;
-  padding:         0;
-  color:           #fff;
+    list-style-type: none;
+    overflow:        hidden;
+    display:         block;
+    margin:          0 0 6px;
+    padding:         0;
+    color:           #fff;
 }
 
 .mejs-sourcechooser-selector li input {
-  clear:  both;
-  float:  left;
-  margin: 3px 3px 0 5px;
+    clear:  both;
+    float:  left;
+    margin: 3px 3px 0 5px;
 }
 
 .mejs-sourcechooser-selector li label {
-  float:       left;
-  width:       100px;
-  padding:     4px 0 0;
-  font-size:   10px;
-  line-height: 15px;
+    float:       left;
+    width:       100px;
+    padding:     4px 0 0;
+    font-size:   10px;
+    line-height: 15px;
 }
 
 /**
@@ -1034,12 +983,12 @@ video.wp-video-shortcode {}
 
 .mejs-clear,
 .wp-playlist-item {
-  clear: both;
+    clear: both;
 }
 
 .mejs-offscreen {
-  position: absolute;
-  top:      -9999em;
+    position: absolute;
+    top:      -9999em;
 }
 
 .ltr .mejs-offscreen { left:  -9999em; }
@@ -1051,102 +1000,111 @@ video.wp-video-shortcode {}
  * --------------------------------------------------------------------------- */
 
 .wp-playlist {
-  margin:      0 0 rem-calc(20);
-  padding:     rem-calc(20);
-  border:      1px solid $gainsboro;
+    margin:      0 0 rem-calc(20);
+    padding:     rem-calc(20);
+}
+.wp-playlist .mejs-container.mejs-video {
+    margin: rem-calc( 10px ) auto 0;
 }
 
 .wp-playlist-light {
-  background: #fff;
+    color: #555;
+    border: 1px solid #ddd;
+    background-color: #fff;
 }
 
 .wp-playlist-dark {
-  color:      #fff;
-  background: #333;
+    color:      #fff;
+    border: 1px solid #ddd;
+    background: #333;
 }
 
 .wp-playlist video {
-  display:   inline-block;
-  max-width: 100%;
+    display:   inline-block;
+    max-width: 100%;
 }
 
 .wp-playlist audio {
-  display:   none;
-  max-width: 100%;
-  width:     100%;
+    display:   none;
+    max-width: 100%;
+    width:     100%;
 }
 
 .wp-playlist .mejs-container {
-  margin: 0;
-  width:  100%;
+    margin: 0;
+    width:  100%;
 }
 
 .wp-playlist .mejs-controls .mejs-button button {
-  outline: 0;
+    outline: 0;
 }
 
 /* All captions. */
 .wp-playlist-caption {
-  max-width:     88%;
-  overflow:      hidden;
-  text-overflow: ellipsis;
+    max-width:     88%;
+    overflow:      hidden;
+    text-overflow: ellipsis;
 }
 
 .wp-playlist-item-title {
-  font-weight: bold;
+
 }
 
 .wp-playlist-item-artist {}
 
 /* Currently playing. */
 .wp-playlist-current-item {
-  margin-bottom: 1.5rem;
-  overflow:hidden;
+    margin-bottom: 1.5rem;
+    overflow:hidden;
 }
 
 .wp-playlist-current-item img {
-  max-width:    60px;
-  height:       auto;
-  float:        left;
-  margin: 0 rem-calc(20) rem-calc(10) 0;
+    max-width:    60px;
+    height:       auto;
+    float:        left;
+    margin: 0 rem-calc(20) rem-calc(10) 0;
+    background: #fff;
 }
 .ltr .wp-playlist-current-item img {
-  float: left;
-  margin: 0 rem-calc(20) rem-calc(10) 0;
+    float: left;
+    margin: 0 rem-calc(20) rem-calc(10) 0;
 }
 .rtl .wp-playlist-current-item img {
-  float: right;
-  margin: 0 0 rem-calc(10) rem-calc(20);
+    float: right;
+    margin: 0 0 rem-calc(10) rem-calc(20);
 }
 
 .wp-playlist-item-meta {
-  display: block;
+    display: block;
 }
 
 .wp-playlist-item-album {}
 
 /* Track list after the current item. */
 .wp-playlist-tracks {
-  margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 /* Playlist items in the list (not currently playing). */
 .wp-playlist-item {
-  overflow:      hidden;
-  cursor:        pointer;
-  margin-bottom: 0.75rem;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 0;
+    padding: rem-calc( 10px ) 0 rem-calc( 10px ) rem-calc( 10px );
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    transition: background-color, 300ms, ease-in-out;
 }
-
 .wp-playlist-item:last-child {
-  margin-bottom: 0;
-  border-bottom: none;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+.wp-playlist-item:hover {
+    background: #f4f4f4;
 }
 
 .wp-playlist-item .wp-playlist-caption {
-  color: #555;
-}
-.wp-playlist-item .wp-playlist-caption:hover {
-  text-decoration: underline;
+    color: #555;
 }
 
 .wp-playlist-item .wp-playlist-item-length {
@@ -1160,7 +1118,9 @@ video.wp-video-shortcode {}
 .wp-playlist-dark .wp-playlist-item {}
 
 /* Currently-playing item in the track list. */
-.wp-playlist-playing { font-weight: bold; }
+.wp-playlist-playing {
+    background-color: #f4f4f4;
+}
 
 .wp-playlist-light .wp-playlist-playing {}
 
