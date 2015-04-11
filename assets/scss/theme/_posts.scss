@@ -50,9 +50,15 @@ article.type-attachment {
 
         .entry-title {
             margin: 0;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
+            word-wrap: break-word;
+
+            a {
+                display: inline-block;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                max-width: 100%;
+            }
         }
 
         .entry-meta {
@@ -63,6 +69,7 @@ article.type-attachment {
 
     .entry-content {
         margin: em-calc( 20 ) 0;
+        word-wrap: break-word;
     }
 
     .entry-footer {
