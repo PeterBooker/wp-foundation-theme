@@ -5,7 +5,7 @@
 // Common Values
 $mejs-control-opacity: 0.8;
 $mejs-primary-color: $primary-color;
-$mejs-primary-color: #fc5a20;
+$mejs-primary-color: #55ACEE;
 $mejs-base-color: $base-color;
 
 /*--------------------------------------------------------------
@@ -695,7 +695,7 @@ video.wp-video-shortcode {}
 /* Volume button */
 .mejs-controls .mejs-volume-button {
     position: relative;
-    background: scale-color( $mejs-primary-color, $lightness: 10% ); /* The Fallback */
+    background: scale-color( $mejs-primary-color, $lightness: -30% );
     margin-left: 5px;
 }
 .mejs-audio .mejs-controls .mejs-volume-button {
