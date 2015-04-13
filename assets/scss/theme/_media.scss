@@ -5,7 +5,6 @@
 // Common Values
 $mejs-control-opacity: 0.8;
 $mejs-primary-color: $primary-color;
-$mejs-primary-color: #55ACEE;
 $mejs-base-color: $base-color;
 
 /*--------------------------------------------------------------
@@ -19,15 +18,15 @@ $mejs-base-color: $base-color;
 /* ====== Container ====== */
 
 .mejs-container {
-    display:         block;
-    position:        relative;
-    margin:          0;
-    padding:         0;
-    vertical-align:  baseline;
-    outline:         none;
-    font-size:       100%;
-    background:      transparent;
-    border:          none;
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    outline: none;
+    font-size: 100%;
+    background: transparent;
+    border: none;
     text-decoration: none;
 }
 
@@ -75,17 +74,15 @@ $mejs-base-color: $base-color;
     left:     0;
     width:    100%;
     height:   100%;
-    background: darken( $mejs-base-color, 12% );
-}
-.mejs-audio .mejs-mediaelement {
-    background: transparent;
 }
 
 /* Audio and video elements */
 .mejs-mediaelement audio {}
 audio.wp-audio-shortcode {}
 
-.mejs-mediaelement video {}
+.mejs-mediaelement video {
+    background: #111;
+}
 video.wp-video-shortcode {}
 
 /* Fullscreen */
@@ -521,6 +518,7 @@ video.wp-video-shortcode {}
     pointer-events: none;
     font-size: 13px;
     font-weight: bold;
+    text-shadow: 0px 0px 8px #444;
 }
 .mejs-time .mejs-currenttime {
     float: left;
@@ -559,7 +557,7 @@ video.wp-video-shortcode {}
 .mejs-time-rail .mejs-time-total {
     position:   relative;
     margin: 4px 0;
-    background-color: scale-color( $mejs-primary-color, $lightness: -20% );
+    background-color: scale-color( $mejs-primary-color, $lightness: -30% );
 }
 
 /* Buffering */
@@ -570,7 +568,7 @@ video.wp-video-shortcode {}
 /* Time loaded */
 .mejs-time-rail .mejs-time-loaded {
     width: 0; /* Don't overwrite. Mediaelement will adjust the width. */
-    background: scale-color( $mejs-primary-color, $lightness: 20% );
+    background-color: scale-color( $mejs-primary-color, $lightness: 40% );
 }
 
 /* Current time. */
@@ -582,6 +580,7 @@ video.wp-video-shortcode {}
     height: 32px;
     border: 4px solid rgba( #fff, 0.3 );
     border-right: none;
+    background: none;
     background-color: transparent;
 
     /* Theme authors: Overwrite just this portion for custom colors. */
@@ -590,12 +589,12 @@ video.wp-video-shortcode {}
     background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
 
     -webkit-background-size: 15px 15px;
     -moz-background-size:    15px 15px;
     -o-background-size:      15px 15px;
-    background-size:         8px 8px;
+    background-size:         10px 10px;
 
 }
 
